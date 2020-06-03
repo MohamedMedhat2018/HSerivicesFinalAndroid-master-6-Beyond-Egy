@@ -1,0 +1,51 @@
+password length
+USERS to Users                                                        -done
+edit the freeelancer offer if exist and not append new onw            -done
+set default image for comments and offers
+set user/customer profile photo must                                  -done
+notification in the meow
+Checking the rate
+check if freelancer sent already offer                             -done
+cost for freelancer
+testing the cm worker
+set user photo for worker must
+adding connevtivity checker for worker and user register activities
+the items in the freelance post don't refresh automatically
+solve the spotsdialog not dismissed problem
+looking at arabic - crash
+preview the image of loopview pager
+adding the default images to loopview pager customer order/post details if no images exist in the order request
+adding some animation
+adding filerable to recyclerviews
+=====================================================Edit Order======================
+Edit order needs to deal with CustomerOrderDetails Activity only not in case of CustomerPostDetails.
+
+
+
+ private void updateProfilePhoto() {
+        dialog = new BottomSheetBuilder(this, null)
+                .setMode(BottomSheetBuilder.MODE_LIST)
+//                .setMode(BottomSheetBuilder.MODE_GRID)
+                .addDividerItem()
+                .expandOnStart(true)
+                .setDividerBackground(R.color.grey_400)
+                .setBackground(R.drawable.ripple_grey)
+                .setMenu(R.menu.menu_image_picker)
+                .setItemClickListener(item -> {
+                    switch (item.getItemId()) {
+                        case R.id.chooseFromCamera:
+                            //EasyImage.openChooserWithGallery(getApplicationContext(), "Ch", int type);
+                            EasyImage.openCamera(this, 0);
+                            break;
+                        case R.id.chooseFromGellery:
+                            EasyImage.openGallery(this, 0);
+                            break;
+//                        case R.id.removePhoto:
+//                            removePhoto();
+//                            break;
+                    }
+                })
+                .createDialog();
+//        dialog.show();
+    }
+

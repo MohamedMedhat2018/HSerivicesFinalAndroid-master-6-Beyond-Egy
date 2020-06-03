@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userPhoto"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@drawable/ripple_grey"
+    android:gravity="bottom"
+    tools:showIn="@layout/activity_company_register">
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/ivUserPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:src="@mipmap/account"
+        app:siBorderColor="@color/Orange"
+        app:siBorderWidth="3dp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/white"
+
+        />
+
+
+</RelativeLayout>

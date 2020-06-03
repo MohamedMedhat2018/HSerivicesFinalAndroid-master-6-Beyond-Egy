@@ -1,0 +1,10 @@
+V3:1.003
+1-Enhancement in arabic language
+2-Fixed hidden item in More page in small devices.
+
+
+
+
+-----------------------
+-Bugs:
+1-When change lang from arabic but the device language is English the design     will be Zft

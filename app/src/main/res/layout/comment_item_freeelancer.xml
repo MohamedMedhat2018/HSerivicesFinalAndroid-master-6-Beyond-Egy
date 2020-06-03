@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_bg"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_marginBottom="5dp">
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/iv_freelancer_profile"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:src="@drawable/profiles"-->
+    <!--        android:layout_margin="5dp"-->
+    <!--        />-->
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:id="@+id/iv_freelancer_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:src="@drawable/profiles"
+        android:layout_margin="5dp"
+        app:siBorderColor="@color/Orange"
+        app:siBorderWidth="3dp"
+
+        />
+
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Button
+        android:id="@+id/btn_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background1"
+        android:text="Accept"
+        android:visibility="gone"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background1"
+        android:text="Preview"
+        android:visibility="gone"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

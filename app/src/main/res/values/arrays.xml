@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="array_customers">
+        <item>@string/orders</item>
+        <item>@string/posts</item>
+    </string-array>
+
+    <string-array name="array_freelancers">
+        <item>@string/start_job</item>
+        <item>@string/still_working</item>
+        <item>@string/finished_jobs</item>
+    </string-array>
+
+
+    <string-array name="array_workers">
+        <item>@string/working_request</item>
+        <item>@string/finished_requests</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layoutDirection="ltr"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="@color/Orange"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/your_last_order"
+            android:textStyle="normal"
+            android:paddingStart="8dp"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/userPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:gravity="bottom">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/ivUserPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:src="@mipmap/account"
+                app:siBorderColor="@color/Orange"
+                app:siBorderWidth="3dp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/white"
+
+                />
+
+
+        </RelativeLayout>
+
+<!--        <TextView-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:background="@color/Orange"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="@string/your_last_order"-->
+<!--            android:textStyle="normal"-->
+<!--            android:paddingStart="8dp"-->
+<!--            />-->
+
+
+        <LinearLayout
+            android:id="@+id/ll_for_company_service_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingBottom="5dp"
+                    >
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CreationDate:"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_creation_date_rate"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CreationDate"
+                        android:paddingStart="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingBottom="5dp">
+
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Category:"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_category_rate"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Carpenter"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="5dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingBottom="10dp">
+
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Country/City:"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_country_and_city_rate"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Egypt/Giza"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="5dp"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingBottom="10dp">
+
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description:"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_desc"
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:text="cxcvxcvxvxcvc"
+                        android:paddingStart="5dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/viewSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/grey_402" />
+
+
+        <!--    <TextView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:text="Rate The Service"-->
+        <!--        android:textStyle="bold"-->
+        <!--        android:ellipsize="marquee"-->
+        <!--        android:padding="5dp"-->
+        <!--        />-->
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rb_customer_order_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+
+            />
+        <!--    <me.zhanghai.android.materialratingbar.MaterialRatingBar-->
+        <!--        android:layout_marginTop="10dp"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="100dp"-->
+        <!--        style="@style/Widget.MaterialRatingBar.RatingBar" />-->
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_bg"
+            android:hint="@string/enter_feedback"
+            android:paddingStart="8dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="8dp"
+            android:visibility="visible"
+            app:hintEnabled="true"
+            tools:ignore="RtlSymmetry">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEnterFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:maxLength="2000"
+                android:maxLines="3"
+                android:textDirection="ltr"
+                android:inputType="textFilter|textMultiLine"
+                android:padding="5dp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <Button
+                android:id="@+id/btnSubmitRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_background1"
+                android:clickable="true"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

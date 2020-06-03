@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--<ripple xmlns:android="http://schemas.android.com/apk/res/android"-->
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+                    <solid android:color="@color/LightGrey"/>
+                    <corners android:radius="5dp" />
+                    <stroke
+                    android:width="1dp"
+                    android:color="@color/white" />
+                </shape>
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:color="@color/my_color1"-->
+<!--    tools:ignore="NewApi">-->
+<!--    <item>-->
+<!--        <selector>-->
+<!--            <item>-->
+<!--                <shape android:shape="rectangle">-->
+<!--                    <solid android:color="@color/LightGrey"/>-->
+<!--                    <corners android:radius="5dp" />-->
+<!--                    &lt;!&ndash;<stroke&ndash;&gt;-->
+<!--                    &lt;!&ndash;android:width="2dp"&ndash;&gt;-->
+<!--                    &lt;!&ndash;android:color="@color/white" />&ndash;&gt;-->
+<!--                </shape>-->
+<!--            </item>-->
+<!--        </selector>-->
+<!--    </item>-->
+<!--</ripple>-->
+
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="rectangle">-->
+
+<!--    <cornersandroid:bottomLeftRadius-->
+<!--    ="15dp"android:bottomRightRadius="15dp"android:topLeftRadius="15dp"-->
+<!--    android:topRightRadius="15dp"-->
+<!--    />-->
+<!--&lt;!&ndash;    <corners&lt;!&ndash;android:radius="20dp" &ndash;&gt;android:bottomLeftRadius="0dp"android:bottomRightRadius="0dp"android:topLeftRadius="5dp"android:topRightRadius="5dp"/>&ndash;&gt;-->
+<!--    <strokeandroid:width="3dp"android:color="@color/Orange" />-->
+<!--&lt;!&ndash;    <solid android:color="@color/Orange" />&ndash;&gt;-->
+<!--</shape>-->

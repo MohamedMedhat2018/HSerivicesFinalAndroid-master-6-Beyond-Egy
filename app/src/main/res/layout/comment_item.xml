@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/rounded_bg"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginBottom="5dp">
+
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/iv_freelancer_profile"-->
+        <!--        android:layout_width="40dp"-->
+        <!--        android:layout_height="40dp"-->
+        <!--        android:src="@drawable/profiles"-->
+        <!--        android:layout_margin="5dp"-->
+        <!--        />-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--        <com.github.siyamed.shapeimageview.CircularImageView-->
+            <!--            android:id="@+id/iv_freelancer_profile"-->
+            <!--            android:layout_width="40dp"-->
+            <!--            android:layout_height="40dp"-->
+            <!--            android:src="@drawable/profiles"-->
+            <!--            android:layout_margin="5dp"-->
+            <!--            app:siBorderColor="@color/Orange"-->
+            <!--            app:siBorderWidth="3dp"-->
+
+            <!--            />-->
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/iv_freelancer_profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/account"
+                android:layout_margin="5dp"
+                app:siBorderColor="@color/Orange"
+                app:siBorderWidth="3dp"
+
+                />
+
+
+            <TextView
+                android:id="@+id/tv_worker_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dotes"
+                android:paddingStart="5dp"
+                android:textDirection="ltr"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            &lt;!&ndash;        <com.github.siyamed.shapeimageview.CircularImageView&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:id="@+id/iv_freelancer_profile"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:layout_width="40dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:layout_height="40dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:src="@drawable/profiles"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:layout_margin="5dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;            app:siBorderColor="@color/Orange"&ndash;&gt;-->
+<!--            &lt;!&ndash;            app:siBorderWidth="3dp"&ndash;&gt;-->
+
+<!--            &lt;!&ndash;            />&ndash;&gt;-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="هذا السعر لا يشمل تكلفه اي مواد يتطلبها العمل"-->
+<!--                android:paddingStart="5dp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center"-->
+<!--                />-->
+
+<!--        </LinearLayout>-->
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="@string/dotes"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <Button
+                android:id="@+id/btn_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background1"
+                android:text="Accept"
+                android:visibility="gone"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background1"
+                android:text="Preview"
+                android:visibility="gone"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/done_green"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="false"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        android:id="@+id/ivDone"
+
+        />
+
+</RelativeLayout>

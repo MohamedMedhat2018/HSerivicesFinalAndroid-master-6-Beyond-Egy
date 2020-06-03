@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_country2_arb">أختر دوله</string>
+
+    <string name="_20">+971</string>
+
+    <string name="facebook_app_id">635717423558404</string>
+    <string name="fb_login_protocol_scheme">fb635717423558404</string>
+    <string name="AD_APP_ID">ca-app-pub-3330565936797075~9003311455</string>
+    <string name="Ad_UNIT_ID_BANNER">ca-app-pub-3330565936797075/9207503194</string>
+    <string name="rationale_ask_ok">نعم</string>
+    <string name="cam_and_storage_rationale">السماح لتطبيق صيانه-UAE بإجراء إلتقاط صور وتسجيل فيديو؟</string>
+    <string name="rationale_ask_cancel">الغاء</string>
+    <string name="title_activity_upgarde_to_premium">UpgardeToPremiumActivity</string>
+    <string name="from_gall">اختر من الجهاز</string>
+    <string name="from_cam">اختر من الكاميرا</string>
+    <string name="app_name_root">Seyanah-uae</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_customer_name">عميل</string>
+
+
+    <string name="order_cost">$200</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="order_data">25/5/19,</string>
+    <string name="order_time">1:00 AM</string>
+    <string name="order_state">Pending</string>
+
+
+    <string name="app_name">HomeService</string>
+    <string name="order_now">أطلب الان</string>
+
+
+    <string name="please_login">من فضلك قم بتسجيل الدخول قبل ارسال الطلب</string>
+    <string name="request_sent_success">الطلب تم ارساله بنجاح</string>
+    <string name="select_service">إختار خدمه</string>
+    <string name="then_obtain_on_best_offers_from_service_providers">لكي تحصل علي أفضل العروض </string>
+    <string name="enter_date">أدخل التاريخ</string>
+    <string name="enter_time">أدخل الوقت</string>
+    <string name="login">تسجيل الدخول</string>
+    <!--    <string name="worker">صاحب عمل</string>-->
+    <string name="worker">دخول كصنايعي</string>
+    <string name="company">دخول كشركه</string>
+    <string name="skip">تخطي</string>
+    <string name="customer">دخول كعميل</string>
+    <string name="send_request">إرسال الطلب</string>
+    <string name="preview">عرض الطلب قبل الارسال</string>
+    <string name="conf_requ_order">تأكيد الطلب</string>
+    <string name="enter_location">ادخل الموقع</string>
+    <string name="desc">الوصف</string>
+    <string name="elected_service">الفئه المختاره</string>
+    <string name="enterd_date">التاريخ المختار</string>
+    <string name="selected_location">المكان المختار</string>
+    <string name="selected_photos">الصور المرفقه</string>
+    <string name="select_loc">أختر المكان</string>
+    <string name="add_clear_desc">أضف وصف واضح للطلب</string>
+    <string name="select_time">اختر وقت للخدمه المطلوبه</string>
+    <string name="select_one_cat">أختر خدمه واحده</string>
+    <string name="select_date">اختر تاريخ للخدمه المطلوبه</string>
+    <string name="attach_photos">اضف صور</string>
+    <string name="set_desc">أضف وصف</string>
+    <string name="set_location">أختر موقع</string>
+    <string name="error_enter_phone">ادخل رقم الجوال</string>
+    <string name="error_enter_name">أدخل الاسم العربي</string>
+    <string name="error_enter_english_name">أدخل الاسم الاجنبي</string>
+    <string name="enter_pass">أدخل كلمة المرور</string>
+    <string name="error_pass_donot_match">كلمة المرور غير متطابقه</string>
+    <string name="enter_email">أدخل البريد الالكتروني</string>
+    <string name="enter_valid_email">أدخل بريد الكتروني صحيح</string>
+    <string name="select_country">أختر مدينه</string>
+    <string name="select_city">أختر مدينه</string>
+    <string name="select_city_dialog">أختر مدينه او اكثر</string>
+    <string name="enter_loc_address">أدخل العنوان</string>
+    <string name="enter_sms">أدخل الكود المرسل</string>
+    <string name="order_rate">تقييم الخدمه</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="phone_number">رقم الجوال</string>
+    <string name="full_name">الاسم بالكامل</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="register">تسجيل</string>
+    <string name="or">أو</string>
+    <string name="already_have_an_account">هل لديك حساب بالفعل؟</string>
+    <string name="create_an_account">أنشئ حساب جديد؟</string>
+    <string name="enter_phone">أدخل رقم الجوال</string>
+    <string name="save">حفظ</string>
+    <string name="please_enter_sms_code">من فضلك أدخل الكود المرسل</string>
+    <string name="resend_sms_code">أعد ارسال الكود</string>
+    <string name="activate">تفعيل</string>
+    <string name="enter_a_comment">ادخل السعر</string>
+    <string name="no_comments_yet">لا توجد تعليقات حتي الان </string>
+    <string name="name_in_arabic">الاسم العربي</string>
+    <string name="name_in_english">الاسم الاجنبي</string>
+    <string name="select_location">أختر موقع</string>
+    <string name="select_worker_type">تسجيل ك </string>
+    <string name="select_category">أختر فئه</string>
+    <string name="about_us">عن الشركه</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="upgrade_to_premium">الترقيه لعميل مميز</string>
+    <string name="app_policy">سياسه الاستخدام</string>
+    <string name="share_app">مشاركه</string>
+    <string name="settings">الاعدادات</string>
+    <string name="log_out">تسجيل خروج</string>
+    <string name="start_job" translatable="false">ابدأ عمل</string>
+    <string name="still_working" translatable="false">مازال يعمل</string>
+    <string name="finished_jobs" translatable="false">المنتهيه</string>
+    <string name="accept">موافقه</string>
+    <string name="add_photos_optional"> اختياري  - اضف صور </string>
+    <string name="add_one_or_more_photos_to_facilitate_problem_identification">اضف صوره او اكثر لكي يسهل علينا تحديد المشكله</string>
+    <string name="write_a_detailed_desc_for_problem_or_requested_service">أكتب وصف دقيق للمشكله أو الخدمه المطلوبه</string>
+    <string name="add_description">أضف وصف</string>
+    <string name="add_a_clear_description_for_your_problem_as_technical_support_can_understand_it_and_introduce_best_offers_for_you">اضف وصف دقيق للمشكله او الخدمه المطلوبه, لكي يستطيع الدعم الفني فهمها و تفديم أفضل العروض</string>
+    <string name="freelancer">فري لانسر</string>
+    <string name="enter_your_location_worker_location">أدخل الموقع </string>
+    <string name="enter_your_location_company_location">المقر الرئيسي للشركة</string>
+    <string name="enter_ufllname">أدخل الاسم كاملا</string>
+    <string name="working_request" translatable="false">الخدمات الفعاله</string>
+    <string name="finished_requests" translatable="false">الخدمات المنتهيه</string>
+    <string name="orders" translatable="false">خدماتي</string>
+    <string name="posts" translatable="false">منشوراتي</string>
+    <string name="please_wait">تحميل...</string>
+    <string name="confirm_request">تأكيد الطلب</string>
+    <string name="back">رجوع</string>
+    <string name="enter_fullname">أدخل الاسم</string>
+    <string name="lang_settings">إعدادات اللغه</string>
+    <string name="select_lang_app">إختر لغة التطبيق</string>
+    <string name="your_request_with">طلبك مع </string>
+    <string name="no_posts">لا توجد منشورات حتي الان</string>
+    <string name="no_orders">لا توجد طلبات حتي الان</string>
+    <string name="ok">موافق</string>
+    <string name="enter_feedback">أدخل تعليق</string>
+
+    <string name="submit">إرسال</string>
+    <string name="enter_feed">أدخل تقييم</string>
+    <string name="sent_success">شكرا لك</string>
+    <string name="set_star">أعطي نجمه واحده علي الاقل</string>
+
+    <string name="no_notification_yet">لا يوجد اشعارات</string>
+    <string name="your_offer_is">العرض المقدم</string>
+    <string name="post_offers">العروض المقدمه</string>
+    <string name="title_1">fghfg</string>
+    <string name="select_country2" >اختر دوله</string>
+
+    <string name="text_1">fghfgh</string>
+    <string name="title_2">hjkhjk</string>
+    <string name="duration_of_work">مده فتره العمل</string>
+    <string name="from">من:</string>
+    <string name="to">الي:</string>
+    <string name="register_with_another_phone">هل تود التسجيل برقم جوال اخر ؟</string>
+    <string name="previewcomment">تفاصيل اكثر </string>
+    <string name="_9_ebn_hany_el_andalosy_nasr_city_cairo_egypt">9 ابن هاني الاندلسي , مدينه نصر , القاهره, مصر </string>
+    <string name="you_are_already_submit_an_offer">لقد قمت بارسال عرض لهذا الطلب للتو</string>
+    <string name="enter_6_chars">أدخل ٦ آحرف علي الاقل </string>
+    <string name="no_working_requests"> لا يوجد اي طلبات فعاله</string>
+    <string name="no_finished_requests_yet">لا توجد طلبات منتهيه حتي الان</string>
+    <string name="aed">AED</string>
+    <string name="invalid_sms_code">كود sms خاطئ </string>
+    <string name="pref_locale">ar</string>
+    <string name="welcome_back">مرحبا بك</string>
+    <string name="no_working_posts">لا توجد منشورات فعاله حتي الان</string>
+    <string name="no_finished_jobs_yet">لا توجد منشورات منتهيه حتي الان</string>
+    <string name="enter"> دخول</string>
+    <string name="edit">تعديل</string>
+    <string name="details_post">تفاصيل المنشور</string>
+    <string name="details_order">تفاصيل الطلب</string>
+    <string name="enter_arabic_name">أدخل الاسم العربي</string>
+    <string name="enter_english_name">أدخل الاسم الاجنبي</string>
+    <string name="contact_us_address">الإمارات العربية المتحدة - ابو ظبي</string>
+
+    <!--    <string name="contact_us_phone_num">+97128744046</string>-->
+
+
+    <string name="contact_us_email">info@seyanah-uae.com</string>
+    <string name="finish_work">انهي الطلب</string>
+    <string name="can_not_edit_offer">
+        لا يمكنك تعديل هذا العرض لاحقا مع العلم ان هذا السعر لا يشمل تكلفه اي مواد يتطلبها العمل
+    </string>
+    <string name="dialog_ok">تاكيد</string>
+    <string name="dialog_cancel">الغاء</string>
+    <string name="forget_password">لا اتذكر كلمة المرور؟</string>
+    <string name="new_password">أدخل كلمة مرور جديده</string>
+    <string name="conf_new_pass">تأكيد كلمة المرور</string>
+    <string name="update_pass">تعديل كلمة المرور</string>
+    <string name="your_last_order">تقييم الخدمه السابقه قبل طلب خدمه مره أخري ...</string>
+    <string name="you_offer_is"> العرض المقدم منك </string>
+    <string name="post_offer">العروض المقدمه:- </string>
+    <string name="you_have">هناك</string>
+    <string name="offer"> عروض </string>
+    <string name="you_are_deactivated">لقد تم الغاء تفعيلك من قبل الشركه</string>
+    <string name="logging_out">تسجيل خروج </string>
+    <string name="quota_exceeded">يرجي المحاوله في وقت لاحق </string>
+    <string name="registering_now">تسجيل الدخول</string>
+    <string name="resend_sms">أعد إرسال الكود</string>
+    <string name="resend_sms_after">أعد إرسال الكود بعد</string>
+    <string name="login_from_another_device">لقد قمت بالفعل بتسجيل الدخول على جهاز آخر ، هل تريد تسجيل الخروج من جميع الأجهزة؟ </string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="okay_login_again">تمام التحقق من هويتك بنجاح,يمكنك الدخول الان</string>
+    <string name="Please_log_in_again">يرجي تسجيل الدخول</string>
+    <string name="post_changed">لقد تم تحويل طلبك الي قسم منشوراتي</string>
+    <string name="dotes">.........</string>
+    <string name="dash">\u0020 | \u0020</string>
+    <string name="comma">، \u0020</string>
+    <string name="password_updated">تم تعديل كلمة المرور بنجاح</string>
+    <string name="upload_photo">ارفع صوره شخصيه</string>
+    <string name="update_full_name">قم بتعديل البريد الالكتروني</string>
+    <string name="update_email">قم بتعديل الاسم</string>
+
+
+    <string name="hint_user">If you want to order request and search for your favorite worker.</string>
+    <!--    <string name="signing_in_as_a_customer">Signing in as a customer allows you to request and track your order.</string>-->
+    <string name="signing_in_as_a_customer">الدخول كعميل يتيح لك بطلب ما تحب من الخدمات و تتبعها.</string>
+    <!--    <string name="signing_in_as_a_worker">Signing in as a freelancer gives you business opportunities around you.</string>-->
+    <string name="signing_in_as_a_worker">الدخول كصاحب مهنه / صنايعي يتيح لك بفرص عمل أكثر من حولك.</string>
+    <string name="signing_in_as_a_company">الدخول كشركه يتيح لك بفرص عمل أكثر من حولك.</string>
+
+
+    <string name="go">فلنبدأ</string>
+    <string name="preview_notification">تفاصيل الطلب</string>
+    <string name="updated_success">تم التعديل بنجاح</string>
+    <string name="enter_an_offer">ادخل سعر للخدمه</string>
+    <string name="company_name">جست كول للصيانه العامه والمقاولات</string>
+    <string name="price_hint_for_user">هذه الاسعار لا تشمل تكلفه اي مواد يتطلبها العمل</string>
+    <string name="preview_order">عرض الطلب</string>
+    <string name="edit_order">تعديل الطلب</string>
+    <string name="title_3">title_3</string>
+    <string name="okay">موافق</string>
+    <string name="select_cat_dialog">أختر فئه أو أكثر</string>
+    <string name="fetch_pdf_file_from_device">ارفق ملف</string>
+    <string name="upload_pdf_file">Upload pdf file</string>
+    <string name="edit_exist_pdf_file">ارفق ملف pdf جديد</string>
+    <string name="reg_company">تسجيل شركه...</string>
+    <string name="phone_already_exist">هذا الرقم مسجل من قبل</string>
+    <string name="select_pdf">ارفق ملف pdf</string>
+    <string name="registering_company">جاري التسجيل… ,من فضلك انتظر</string>
+
+
+    <!--    <string name="country_code">+20</string>-->
+    <!--    <string name="country_code">+971</string>-->
+
+
+    <string name="upload_company_photo">ارفع صوره للشركه</string>
+    <string name="register_not_activited">تم تسجيل الدخول بنجاح ,ولاكن لم يتم تفعيل الحساب </string>
+    <string name="editing_pending_order">تعديل الطلب</string>
+    <string name="edited_success">تم تعديل الطلب بناجاح</string>
+    <string name="registering_customer">تسجيل كعميل , رجاء الانتظار</string>
+    <string name="registering_freelancer">تسجيل كصنايعي و رجاء الانتظار</string>
+    <string name="logout_account">تسجيل الخروج</string>
+    <string name="delete_account">مسح الحساب</string>
+    <string name="are_you_sure">هل انت متاكد</string>
+    <string name="delete_account_progress">ازاله الحساب...</string>
+    <string name="are_you_sure2">هل انت متاكد من ازاله الحساب؟</string>
+
+</resources>

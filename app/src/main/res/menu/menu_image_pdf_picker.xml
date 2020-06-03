@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/chooseFromGellery"
+        android:icon="@drawable/from_gallery"
+        android:title="@string/from_gall"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/chooseFromCamera"
+        android:icon="@drawable/from_cam"
+        android:title="@string/from_cam"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/choosePdf"
+        android:icon="@drawable/pdf"
+        android:title="@string/select_pdf"
+        app:showAsAction="ifRoom" />
+
+</menu>

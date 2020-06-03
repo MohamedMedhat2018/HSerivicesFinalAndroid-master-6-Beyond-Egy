@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="10"
+
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/orange"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/toolbarProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/Orange"
+                        android:minHeight="?attr/actionBarSize"
+                        android:visibility="gone"
+                        app:navigationIcon="@drawable/back_white"
+
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="100">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="18"
+                                android:background="@drawable/ripple_grey2"
+                                android:clickable="true"
+                                android:orientation="vertical" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="82"
+                                android:background="@color/white"
+                                android:orientation="vertical" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+
+                            android:id="@+id/userPhoto"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ripple_grey"
+                            android:gravity="bottom">
+                            <!--                        <com.github.siyamed.shapeimageview.CircularImageView-->
+                            <!--                            android:id="@+id/ivUserPhoto"-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_margin="6dp"-->
+                            <!--                            android:src="@mipmap/account"-->
+                            <!--                            app:siBorderColor="@color/Orange"-->
+                            <!--                            app:siBorderWidth="3dp" />-->
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ivUserPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="6dp"
+                                android:src="@drawable/user2"
+                                app:civ_border_color="@color/white"
+                                app:civ_border_width="3dp"
+
+                                />
+                            <!--                        <ImageView-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="match_parent"-->
+                            <!--                            android:layout_margin="6dp"-->
+                            <!--                            android:src="@mipmap/account"-->
+                            <!--                            />-->
+
+                            <com.github.ybq.android.spinkit.SpinKitView
+                                android:id="@+id/progress"
+                                style="@style/SpinKitView.Large.Circle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center"
+                                android:background="@null"
+                                android:visibility="visible"
+
+                                app:SpinKit_Color="@color/white" />
+
+                            <include layout="@layout/edit_icon" />
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <!--                        <androidx.cardview.widget.CardView-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_gravity="left"-->
+                            <!--                            android:layout_marginLeft="10dp"-->
+                            <!--                            android:layout_marginTop="5dp"-->
+                            <!--                            android:layout_marginRight="10dp"-->
+                            <!--                            android:layout_marginBottom="5dp"-->
+                            <!--                            android:clickable="true"-->
+                            <!--                            android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--                            app:cardElevation="0dp">-->
+
+                            <LinearLayout
+                                android:id="@+id/llFullName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+
+                                android:padding="5dp"
+                                tools:ignore="UseCompoundDrawables">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:padding="10dp"
+                                    android:src="@drawable/profile_name" />
+
+                                <TextView
+                                    android:id="@+id/tvFullName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="start"
+                                    android:inputType="textPersonName"
+                                    android:longClickable="false"
+                                    android:padding="5dp"
+                                    android:text=""
+                                    android:textColor="@color/Black"
+
+                                    android:textDirection="ltr"
+                                    android:textSize="19sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llWorkerNameEn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+
+                                android:padding="5dp"
+                                tools:ignore="UseCompoundDrawables">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:padding="10dp"
+                                    android:src="@drawable/profile_name" />
+
+                                <TextView
+                                    android:id="@+id/tvWorkerNameEn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="start"
+                                    android:inputType="textPersonName"
+                                    android:longClickable="false"
+                                    android:padding="5dp"
+                                    android:text=""
+                                    android:textColor="@color/Black"
+                                    android:textDirection="ltr"
+                                    android:textSize="19sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llWorkerNameAr"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+
+                                android:padding="5dp"
+                                tools:ignore="UseCompoundDrawables">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:padding="10dp"
+                                    android:src="@drawable/profile_name" />
+
+                                <TextView
+                                    android:id="@+id/tvWorkerNameAr"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="start"
+                                    android:inputType="textPersonName"
+                                    android:longClickable="false"
+                                    android:padding="5dp"
+                                    android:text=""
+                                    android:textColor="@color/Black"
+                                    android:textDirection="ltr"
+                                    android:textSize="19sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <!--                        </androidx.cardview.widget.CardView>-->
+
+                            <!--<androidx.cardview.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="left"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="10dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:clickable="true"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<LinearLayout-->
+                            <!--android:id="@+id/llLocation"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:padding="5dp">-->
+
+                            <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:src="@drawable/profile_location" />-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/tvLocation"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:inputType="text"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:text="9 Ebn hany Elandalosy"-->
+                            <!--android:textColor="@color/Black"-->
+                            <!--android:textSize="19sp"-->
+
+                            <!--/>-->
+                            <!--</LinearLayout>-->
+                            <!--</androidx.cardview.widget.CardView>-->
+
+                            <!--                        <androidx.cardview.widget.CardView-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_gravity="left"-->
+                            <!--                            android:layout_marginLeft="10dp"-->
+                            <!--                            android:layout_marginTop="5dp"-->
+                            <!--                            android:layout_marginRight="10dp"-->
+                            <!--                            android:layout_marginBottom="5dp"-->
+                            <!--                            android:clickable="true"-->
+
+                            <!--                            android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--                            app:cardElevation="0dp">-->
+
+                            <LinearLayout
+                                android:id="@+id/llEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:src="@drawable/profile_email" />
+
+                                <TextView
+                                    android:id="@+id/tvEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="textEmailAddress"
+                                    android:padding="5dp"
+                                    android:text=""
+                                    android:textColor="@color/Black"
+                                    android:textDirection="ltr"
+                                    android:textSize="19sp" />
+                            </LinearLayout>
+                            <!--                        </androidx.cardview.widget.CardView>-->
+
+                            <!--                        <androidx.cardview.widget.CardView-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_gravity="left"-->
+                            <!--                            android:layout_marginLeft="10dp"-->
+                            <!--                            android:layout_marginTop="5dp"-->
+                            <!--                            android:layout_marginRight="10dp"-->
+                            <!--                            android:layout_marginBottom="5dp"-->
+                            <!--                            android:clickable="true"-->
+                            <!--                            android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--                            app:cardElevation="0dp">-->
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/grey_200"
+                                android:clickable="false"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/ll"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_toLeftOf="@id/ivChecked"
+                                        android:background="@color/grey_200"
+                                        android:clickable="false"
+                                        android:orientation="horizontal"
+
+                                        android:padding="5dp">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="10dp"
+                                            android:src="@drawable/profile_phone" />
+
+                                        <TextView
+                                            android:id="@+id/tvPhoneNumber"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:enabled="false"
+                                            android:gravity="center_vertical"
+                                            android:inputType="phone"
+                                            android:longClickable="false"
+                                            android:padding="5dp"
+                                            android:text=""
+
+                                            android:textColor="@color/Black"
+                                            android:textDirection="ltr"
+                                            android:textSize="19sp" />
+
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/ivChecked"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/ic_checked" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                            <!--                        </androidx.cardview.widget.CardView>-->
+
+                            <!--                        <androidx.cardview.widget.CardView-->
+                            <!--                            android:layout_width="match_parent"-->
+                            <!--                            android:layout_height="wrap_content"-->
+                            <!--                            android:layout_gravity="left"-->
+                            <!--                            android:layout_marginLeft="10dp"-->
+                            <!--                            android:layout_marginTop="5dp"-->
+                            <!--                            android:layout_marginRight="10dp"-->
+                            <!--                            android:layout_marginBottom="5dp"-->
+                            <!--                            android:clickable="true"-->
+
+                            <!--                            android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--                            app:cardElevation="0dp">-->
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+                                android:padding="5dp"
+
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:src="@drawable/profile_password" />
+
+                                <TextView
+                                    android:id="@+id/tvPassword"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:inputType="textPassword"
+                                    android:longClickable="false"
+                                    android:padding="5dp"
+                                    android:text=""
+                                    android:textColor="@color/Black"
+
+                                    android:textDirection="ltr"
+                                    android:textSize="19sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llPdfViewer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_grey"
+                                android:clickable="true"
+                                android:orientation="horizontal"
+                                android:padding="5dp"
+                                android:visibility="gone"
+
+                                >
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:src="@drawable/pdf_icon" />
+                                <!--                                <es.voghdev.pdfviewpager.library.PDFViewPager-->
+                                <!--                                    android:id="@+id/pdfViewPager"-->
+                                <!--                                    android:layout_width="match_parent"-->
+                                <!--                                    android:layout_height="200dp"-->
+                                <!--                                    />-->
+
+                                <!--                                <es.voghdev.pdfviewpager.library.RemotePDFViewPager-->
+                                <!--                                    android:id="@+id/remotePdfViewPager"-->
+                                <!--                                    android:layout_width="match_parent"-->
+                                <!--                                    android:layout_height="200dp" />-->
+
+                                <LinearLayout
+                                    android:id="@+id/llPdfContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+
+                                    >
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                            <!--                        </androidx.cardview.widget.CardView>-->
+
+                            <!--<androidx.cardview.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="left"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="10dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:clickable="true"-->
+                            <!--android:foreground="?android:attr/selectableItemBackground"-->
+
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<LinearLayout-->
+                            <!--android:id="@+id/llCategory"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:padding="5dp">-->
+
+                            <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:src="@drawable/profile_categorie" />-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/tvCategory"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:inputType="text"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:text="carpenter"-->
+                            <!--android:textColor="@color/Black"-->
+                            <!--android:textSize="19sp" />-->
+                            <!--</LinearLayout>-->
+                            <!--</androidx.cardview.widget.CardView>-->
+
+                            <!--<androidx.cardview.widget.CardView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="left"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="10dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:clickable="true"-->
+                            <!--android:visibility="gone"-->
+                            <!--android:foreground="?android:attr/selectableItemBackground"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<LinearLayout-->
+                            <!--android:id="@+id/llType"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:padding="5dp">-->
+
+                            <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:src="@drawable/profile_type" />-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/tvType"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:inputType="text"-->
+                            <!--android:padding="5dp"-->
+                            <!--android:text="Freelancer"-->
+                            <!--android:textColor="@color/Black"-->
+                            <!--android:textSize="19sp" />-->
+                            <!--</LinearLayout>-->
+                            <!--</androidx.cardview.widget.CardView>-->
+
+
+                        </LinearLayout>
+                    </ScrollView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/login_before" />
+
+
+</LinearLayout>

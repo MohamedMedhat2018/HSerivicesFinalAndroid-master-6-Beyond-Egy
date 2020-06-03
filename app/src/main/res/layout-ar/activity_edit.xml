@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="@color/white"
+    tools:context=".activites.profile.EditActivity">
+
+    <!--<androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--app:subtitle="Contacts"-->
+    <!--app:subtitleTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"-->
+    <!--app:subtitleTextColor="@color/white"-->
+    <!--app:categoryName="@string/app_name"-->
+    <!--app:titleTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"-->
+    <!--app:titleTextColor="@color/white"-->
+    <!--/>-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbarEditProfile"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/Orange"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        >-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/back_white"-->
+<!--                android:rotation="180"-->
+<!--                android:layout_alignParentEnd="false"-->
+<!--                android:layout_marginStart="10dp"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+    <include
+        layout="@layout/toolbar"
+        ></include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarEditProfile"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_bg"
+            android:hint="@string/add_description"
+            android:paddingStart="8dp"
+            android:paddingTop="5dp"
+            android:ellipsize="end"
+            android:paddingBottom="8dp"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEnterBla"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:maxEms="4"
+                android:maxLength="5000"
+                android:textDirection="ltr"
+                android:maxLines="3"
+                android:padding="5dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/dateTextInputLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:background="@drawable/rounded_bg"-->
+<!--            android:hint="@string/enter_phone"-->
+<!--            android:textColorHint="@color/gray3"-->
+<!--            app:hintEnabled="true">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/etEnterBla"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:padding="15dp"-->
+<!--                android:textAlignment="center" />-->
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveChanges"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_bg3"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

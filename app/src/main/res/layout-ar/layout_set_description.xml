@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/write_a_detailed_desc_for_problem_or_requested_service"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+    android:textStyle="normal"
+    tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:text="@string/add_a_clear_description_for_your_problem_as_technical_support_can_understand_it_and_introduce_best_offers_for_you"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textStyle="normal"
+        tools:ignore="RtlHardcoded" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_bg"
+        android:hint="@string/add_description"
+        android:paddingStart="8dp"
+        android:paddingTop="5dp"
+        android:ellipsize="end"
+        android:paddingBottom="8dp"
+        app:hintEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEnterDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:inputType="textFilter|textMultiLine"
+            android:maxEms="4"
+            android:maxLength="5000"
+            android:maxLines="3"
+            android:padding="5dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

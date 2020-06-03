@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:id="@+id/progressBar"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_centerInParent="true"-->
+<!--    android:visibility="visible"-->
+<!--    style="?android:attr/progressBarStyleSmall"-->
+
+
+<!--    />-->
+<!--<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:id="@+id/progressBar"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_centerInParent="true"-->
+<!--    android:visibility="visible"-->
+<!--    style="?android:attr/progressBarStyleLarge"-->
+<!--    />-->
+
+<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progressBar"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_centerInParent="true"
+    android:visibility="visible"
+    style="?android:attr/progressBarStyleLarge"
+    />

@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<layout-->
+
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:apps="http://schemas.android.com/apk/res-auto">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.ahmed.homeservices.activites.cutomer_or_worker.register.WorkerRegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1.5"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="10dp"
+        android:weightSum="10">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="top"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center|bottom"
+            android:text="@string/create_account"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="0.75"-->
+        <!--android:text="lm"-->
+        <!--android:visibility="invisible" />-->
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="8.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/grey_401"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:contentPadding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/user_photo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="15dp">
+
+                        <TextView
+                            android:id="@+id/tvCountryCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:text="@string/_20"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/etWorkerPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="@string/phone_number"
+                            android:inputType="phone"
+                            android:padding="8dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray3">
+
+
+                            <requestFocus />
+                        </EditText>
+
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/tvErrPhoneNumber"
+                        layout="@layout/layout_error"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+                    <EditText
+                        android:id="@+id/etWorkerNameInArabic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/name_in_arabic"
+                        android:inputType="textCapWords|textFilter"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray3"
+                        android:textDirection="ltr" />
+
+                    <include
+                        android:id="@+id/tvErrNameInAr"
+                        layout="@layout/layout_error"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+
+                    <EditText
+                        android:id="@+id/etWorkerNameInEnglish"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/name_in_english"
+                        android:inputType="textCapWords|textFilter"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray3"
+                        android:textDirection="ltr" />
+
+                    <include
+                        android:id="@+id/tvErrNameInEn"
+                        layout="@layout/layout_error"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+
+                    <!--                        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText-->
+                    <!--                            android:id="@+id/etWorkerPass"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginTop="20dp"-->
+                    <!--                            android:background="@null"-->
+                    <!--                            android:fontFamily="sans-serif-condensed"-->
+                    <!--                            android:gravity="center_vertical"-->
+                    <!--                            android:hint="@string/password"-->
+                    <!--                            android:inputType="textPassword"-->
+                    <!--                            android:padding="8dp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:textColorHint="@color/gray3" />-->
+
+                    <EditText
+                        android:id="@+id/etWorkerPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@null"
+                        android:gravity="left"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray3" />
+
+                    <include
+                        android:id="@+id/tvErrPassword"
+                        layout="@layout/layout_error"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+
+                    <!--                        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText-->
+                    <!--                            android:id="@+id/etWorkerConfirmPass"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginTop="20dp"-->
+                    <!--                            android:background="@null"-->
+                    <!--                            android:fontFamily="sans-serif-condensed"-->
+                    <!--                            android:gravity="center_vertical"-->
+                    <!--                            android:hint="@string/confirm_password"-->
+                    <!--                            android:inputType="textPassword"-->
+                    <!--                            android:padding="8dp"-->
+                    <!--                            android:textColor="@color/black"-->
+                    <!--                            android:textColorHint="@color/gray3" />-->
+
+                    <EditText
+                        android:id="@+id/etWorkerConfirmPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center_vertical"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPassword"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray3" />
+
+                    <include
+                        android:id="@+id/tvErrConfPass"
+                        layout="@layout/layout_error"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+
+                    <EditText
+                        android:id="@+id/etWorkerEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray3" />
+
+                    <include
+                        android:id="@+id/tvErrEmail"
+                        layout="@layout/layout_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray2" />
+
+
+                    <com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:expansion_openOnlyOne="false">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/transparent"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <com.github.florent37.expansionpanel.ExpansionHeader
+                                    android:id="@+id/sampleHeader1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ripple_grey"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    app:expansion_headerIndicator="@+id/headerIndicator1"
+                                    app:expansion_layout="@+id/expansionLayout1"
+                                    app:expansion_toggleOnClick="true">
+
+                                    <!--<include layout="@layout/layout_expansion_header" />-->
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="48dp"
+                                        android:background="@color/grey_401"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="horizontal">
+
+                                            <ImageView
+                                                android:id="@+id/ivIcon1"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:paddingEnd="10dp"
+                                                android:src="@drawable/ic_location"
+                                                android:textColor="#AAA"
+                                                android:visibility="visible" />
+
+
+                                            <TextView
+                                                android:id="@+id/tvTitle1"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:ellipsize="marquee"
+                                                android:text="@string/select_location"
+                                                android:textColor="#3E3E3E" />
+                                        </LinearLayout>
+
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/headerIndicator1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="16dp"
+                                            android:adjustViewBounds="true"
+                                            app:srcCompat="@drawable/indecator_worker_rejester"
+
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <!--<ImageView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_centerVertical="true"-->
+                                        <!--android:layout_toLeftOf="@id/headerIndicator"-->
+                                        <!--android:src="@drawable/edit"-->
+                                        <!--android:visibility="gone" />-->
+
+
+                                    </RelativeLayout>
+
+
+                                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                                <com.github.florent37.expansionpanel.ExpansionLayout
+                                    android:id="@+id/expansionLayout1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:expansion_expanded="false">
+
+                                    <LinearLayout
+                                        android:id="@+id/container"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:id="@+id/subviewContainer"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <include layout="@layout/layout_select_location" />
+
+                                        </LinearLayout>
+
+                                        <!--<include-->
+
+                                        <!--layout="@layout/back_next"-->
+                                        <!--android:visibility="gone" />-->
+
+                                    </LinearLayout>
+
+                                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                                <!--<include layout="@layout/layout_expansion_layout" />-->
+
+                                <include
+                                    layout="@layout/view_separator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp" />
+
+                                <com.github.florent37.expansionpanel.ExpansionHeader
+                                    android:id="@+id/sampleHeader2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/ripple_grey"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:visibility="gone"
+                                    app:expansion_headerIndicator="@+id/headerIndicator2"
+                                    app:expansion_layout="@+id/expansionLayout2"
+                                    app:expansion_toggleOnClick="true">
+
+                                    <!--<include layout="@layout/layout_expansion_header" />-->
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="48dp"
+                                        android:background="@color/grey_401"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="horizontal"
+
+                                            >
+
+                                            <ImageView
+                                                android:id="@+id/ivIcon2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:paddingEnd="10dp"
+                                                android:src="@drawable/ic_worker_type"
+                                                android:textColor="#AAA"
+                                                android:visibility="visible" />
+
+
+                                            <TextView
+                                                android:id="@+id/tvTitle2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:ellipsize="marquee"
+                                                android:text="@string/select_worker_type"
+                                                android:textColor="#3E3E3E" />
+                                        </LinearLayout>
+
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/headerIndicator2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="16dp"
+                                            android:adjustViewBounds="true"
+                                            app:srcCompat="@drawable/indecator_worker_rejester"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <!--<ImageView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_centerVertical="true"-->
+                                        <!--android:layout_toLeftOf="@id/headerIndicator"-->
+                                        <!--android:src="@drawable/edit"-->
+                                        <!--android:visibility="gone" />-->
+
+
+                                    </RelativeLayout>
+
+
+                                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                                <com.github.florent37.expansionpanel.ExpansionLayout
+                                    android:id="@+id/expansionLayout2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:visibility="gone"
+                                    app:expansion_expanded="false">
+
+                                    <LinearLayout
+                                        android:id="@+id/container2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:id="@+id/subviewContainer2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="10dp">
+
+                                            <include layout="@layout/layout_worker_type" />
+
+                                        </LinearLayout>
+
+                                        <!--<include-->
+
+                                        <!--layout="@layout/back_next"-->
+                                        <!--android:visibility="gone" />-->
+
+                                    </LinearLayout>
+
+                                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                                <include
+                                    layout="@layout/view_separator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="gone" />
+
+
+                                <com.github.florent37.expansionpanel.ExpansionHeader
+                                    android:id="@+id/sampleHeader3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/ripple_grey"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    app:expansion_headerIndicator="@+id/headerIndicator3"
+                                    app:expansion_layout="@+id/expansionLayout3"
+                                    app:expansion_toggleOnClick="true">
+
+                                    <!--<include layout="@layout/layout_expansion_header" />-->
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="48dp"
+                                        android:background="@color/grey_401"
+                                        android:paddingStart="16dp"
+                                        android:paddingEnd="16dp">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:orientation="horizontal"
+
+                                            >
+
+                                            <ImageView
+                                                android:id="@+id/ivIcon3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:paddingEnd="10dp"
+                                                android:src="@drawable/ic_worker_category"
+                                                android:textColor="#AAA"
+                                                android:visibility="visible" />
+
+
+                                            <TextView
+                                                android:id="@+id/tvTitle3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:ellipsize="marquee"
+                                                android:text="@string/select_category"
+                                                android:textColor="#3E3E3E" />
+                                        </LinearLayout>
+
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/headerIndicator3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="16dp"
+                                            android:adjustViewBounds="true"
+                                            app:srcCompat="@drawable/indecator_worker_rejester"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <!--<ImageView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_centerVertical="true"-->
+                                        <!--android:layout_toLeftOf="@id/headerIndicator"-->
+                                        <!--android:src="@drawable/edit"-->
+                                        <!--android:visibility="gone" />-->
+
+
+                                    </RelativeLayout>
+
+
+                                </com.github.florent37.expansionpanel.ExpansionHeader>
+
+                                <com.github.florent37.expansionpanel.ExpansionLayout
+                                    android:id="@+id/expansionLayout3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:expansion_expanded="false">
+
+                                    <LinearLayout
+                                        android:id="@+id/container3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:id="@+id/subviewContainer3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="7dp">
+
+                                            <include
+                                                layout="@layout/layout_select_cat_worker"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="20dp" />
+
+                                        </LinearLayout>
+
+                                        <!--<include-->
+
+                                        <!--layout="@layout/back_next"-->
+                                        <!--android:visibility="gone" />-->
+
+                                    </LinearLayout>
+
+                                </com.github.florent37.expansionpanel.ExpansionLayout>
+
+                                <!--<include layout="@layout/layout_expansion_layout" />-->
+
+                                <!--<include layout="@layout/view_separator" />-->
+
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupConstraintLayout>
+
+
+                    <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="Location"-->
+                    <!--android:inputType="text"-->
+
+
+                    <!--android:padding="8dp"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textColorHint="@color/gray3"-->
+                    <!--/>-->
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.44dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--android:background="@color/gray2" />-->
+
+
+                    <!--<Spinner-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:entries="@array/cate_list"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textColorHint="@color/gray3">-->
+
+
+                    <!--</Spinner>-->
+
+
+                    <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:hint="Category"-->
+
+                    <!--android:padding="8dp"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textColorHint="@color/gray3"-->
+                    <!--android:theme="@style/MyEditTextTheme" />-->
+
+
+                    <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0.44dp"-->
+                    <!--android:layout_marginLeft="8dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--android:background="@color/gray2" />-->
+
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_weight="0.75"-->
+                    <!--android:gravity="center">-->
+
+                    <Button
+                        android:id="@+id/btn_worker_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_background1"
+                        android:padding="8dp"
+                        android:text="@string/create_account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0.44dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="4"
+                            android:background="@color/gray2" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="@string/or"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0.44dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="4"
+                            android:background="@color/gray2" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:ellipsize="marquee"
+                        android:text="@string/already_have_an_account"
+                        android:textColor="@color/gray3"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvWorkerLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/transparent"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/enter"
+                        android:textAllCaps="false"
+                        android:textColor="@color/orange_dark"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+
+                    <!--</RelativeLayout>-->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:layout_weight="0.75"-->
+    <!--android:gravity="center">-->
+
+    <!--<Button-->
+    <!--android:layout_width="199dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center|center_horizontal"-->
+    <!--android:background="@drawable/edit_text_background"-->
+    <!--android:text="Submit"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:textColor="@color/white1"-->
+    <!--android:textSize="18sp" />-->
+
+    <!--</LinearLayout>-->
+
+
+</LinearLayout>
+
+    <!--</layout>-->

@@ -1,0 +1,138 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="MyToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <!-- Dialog -->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/orange_light3</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MyAlertDialogButtonStyle</item>
+        <item name="android:titleTextColor">@color/grey_402</item>
+
+<!--        <item name="buttonBarPositiveButtonStyle">@color/white</item>-->
+<!--        <item name="buttonBarNegativeButtonStyle">@color/white</item>-->
+<!--        <item name="buttonBarNeutralButtonStyle">@color/white</item>-->
+
+
+    </style>
+
+    <style name="MyAlertDialogButtonStyle" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="MyDialogFadeAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--        <item name="colorAccent">@color/colorAccent</item>-->
+
+    <!--        &lt;!&ndash; Assign dialog style here. &ndash;&gt;-->
+    <!--        <item name="alertDialogTheme">@style/MyAlertDialogStyle</item>-->
+    <!--        <item name="alertDialogStyle">@style/MyAlertDialogStyle</item>-->
+
+    <!--        &lt;!&ndash; Assign custom text styles for title, description, comment &ndash;&gt;-->
+    <!--        <item name="appRatingDialogTitleStyle">@style/MyDialogTitleStyle</item>-->
+    <!--        <item name="appRatingDialogDescriptionStyle">@style/MyDialogDescriptionStyle</item>-->
+    <!--        <item name="appRatingDialogNoteDescriptionStyle">@style/MyDialogNoteDescriptionStyle</item>-->
+    <!--        <item name="appRatingDialogCommentStyle">@style/MyDialogCommentStyle</item>-->
+    <!--    </style>-->
+
+<!--    <style name="MenuButtonsSmall">-->
+<!--        <item name="fab_size">mini</item>-->
+<!--        <item name="fab_colorNormal">#1565C0</item>-->
+<!--        <item name="fab_colorPressed">#2272CD</item>-->
+<!--        <item name="fab_colorRipple">#62B2FF</item>-->
+<!--    </style>-->
+
+<!--    <style name="MenuButtonsSmall.Green">-->
+<!--        <item name="fab_colorNormal">@color/colorPrimary2</item>-->
+<!--        <item name="fab_colorPressed">@color/colorPrimary6</item>-->
+<!--        <item name="fab_colorRipple">@color/LightGray</item>-->
+<!--    </style>-->
+
+    <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/Orange</item>-->
+    <!--        <item name="colorPrimaryDark">@color/Orange</item>-->
+    <!--        <item name="colorAccent">@color/Orange</item>-->
+    <!--    </style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/my_color2</item>-->
+<!--        <item name="colorPrimaryDark">@color/my_color3</item>-->
+<!--        <item name="colorAccent">@color/my_color3</item>   -->
+
+
+        <item name="colorPrimary">@color/Orange</item>
+        <item name="colorPrimaryDark">@color/Orange</item>
+        <item name="colorAccent">@color/Orange</item>
+    </style>
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/Coral</item>-->
+    <!--<item name="colorPrimaryDark">@color/Coral</item>-->
+    <!--<item name="colorAccent">@color/Coral</item>-->
+    <!--</style>-->
+    <style name="ButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+        <!--<item name="colorPrimary">@android:color/transparent</item>-->
+<!--        <item name="colorPrimary">@color/my_color3</item>-->
+        <item name="colorPrimary">@color/Orange</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+<!--        <item name="android:windowBackground">@color/my_color3</item>-->
+        <item name="android:windowBackground">@color/Orange</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+</resources>

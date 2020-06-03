@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><!--<GridView--><!--android:id="@+id/gridviewCategories"--><!--android:layout_width="match_parent"--><!--android:layout_height="250dp"--><!--android:choiceMode="multipleChoiceModal"--><!--android:gravity="center"--><!--android:horizontalSpacing="0dp"--><!--android:numColumns="auto_fit"--><!--android:overScrollMode="never"--><!--android:padding="0dp"--><!--android:scrollbars="none"--><!--android:stretchMode="columnWidth"--><!--android:verticalSpacing="0dp"--><!--tools:listitem="@layout/layout_category_grid_item"--><!--/>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:windowSoftInputMode="adjustPan">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/select_service"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/then_obtain_on_best_offers_from_service_providers"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </LinearLayout>
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rvSelectCat"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:background="@color/transparent"-->
+    <!--        android:nestedScrollingEnabled="false"-->
+    <!--        android:padding="1dp"-->
+    <!--        android:visibility="visible"-->
+    <!--        android:scrollbars="none"-->
+    <!--        tools:listitem="@layout/layout_category_grid_item" />-->
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll"
+        android:padding="5dp"
+        android:visibility="gone"
+
+        >
+
+        <!--        <include layout="@layout/spinkit_progress" />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelectCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@color/transparent"
+            android:nestedScrollingEnabled="false"
+            android:padding="1dp"
+            android:scrollbars="none"
+            android:visibility="gone"
+            tools:listitem="@layout/layout_category_grid_item" />
+
+
+        <include
+            android:id="@+id/rlLoadingCats"
+            layout="@layout/large_progress"
+            android:visibility="gone"
+
+            ></include>
+
+
+    </RelativeLayout>
+
+
+    <!--       <com.jaredrummler.materialspinner.MaterialSpinner-->
+    <!--           android:id="@+id/spinnerSelectCat"-->
+    <!--           android:layout_width="match_parent"-->
+    <!--           android:layout_height="wrap_content"-->
+    <!--           android:layout_marginBottom="6dp"-->
+    <!--           android:visibility="gone"-->
+    <!--           app:ms_dropdown_height="wrap_content"-->
+    <!--           app:ms_dropdown_max_height="350dp" />-->
+
+
+    <Spinner
+        android:id="@+id/spinnerSelectCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:visibility="visible"
+
+        />
+    <!--<GridView--><!--android:id="@+id/gridviewCategories"--><!--android:layout_width="match_parent"--><!--android:layout_height="700dp"--><!--android:background="@color/grey_200"--><!--android:choiceMode="singleChoice"--><!--android:gravity="center"--><!--android:horizontalSpacing="8dp"--><!--android:numColumns="3"--><!--android:clickable="true"--><!--android:focusable="true"--><!--android:overScrollMode="never"--><!--android:padding="5dp"--><!--android:scrollbars="none"--><!--android:stretchMode="columnWidth"--><!--android:verticalSpacing="8dp"--><!--tools:listitem="@layout/layout_category_grid_item" />-->
+
+
+    <!--<GridView-->
+    <!--android:id="@+id/gridviewCategories"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/grey_200"-->
+    <!--android:choiceMode="singleChoice"-->
+    <!--android:clickable="true"-->
+    <!--android:columnWidth="100dp"-->
+    <!--android:focusable="true"-->
+    <!--android:gravity="top"-->
+    <!--android:horizontalSpacing="8dp"-->
+    <!--android:nestedScrollingEnabled="true"-->
+    <!--android:numColumns="auto_fit"-->
+    <!--android:overScrollMode="never"-->
+    <!--android:padding="5dp"-->
+    <!--android:scrollbars="none"-->
+    <!--android:stretchMode="spacingWidthUniform"-->
+    <!--android:verticalSpacing="8dp"-->
+    <!--android:visibility="gone"-->
+    <!--tools:listitem="@layout/layout_category_grid_item"-->
+    <!--tools:showIn="@layout/expansion_panel_select_category" />-->
+
+
+    <!--    <include layout="@layout/view_separator" />-->
+
+    <!--<include layout="@layout/back_next" />-->
+
+
+</LinearLayout>
+
+    <!--</LinearLayout>
+    &lt;!&ndash;<GridView&ndash;&gt;&lt;!&ndash;android:id="@+id/gridviewCategories"&ndash;&gt;&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;&lt;!&ndash;android:choiceMode="multipleChoiceModal"&ndash;&gt;&lt;!&ndash;android:gravity="center"&ndash;&gt;&lt;!&ndash;android:horizontalSpacing="0dp"&ndash;&gt;&lt;!&ndash;android:numColumns="4"&ndash;&gt;&lt;!&ndash;android:overScrollMode="always"&ndash;&gt;&lt;!&ndash;android:padding="0dp"&ndash;&gt;&lt;!&ndash;android:scrollbars="none"&ndash;&gt;&lt;!&ndash;android:stretchMode="columnWidth"&ndash;&gt;&lt;!&ndash;android:verticalSpacing="0dp"&ndash;&gt;&lt;!&ndash;tools:listitem="@layout/layout_category_grid_item"&ndash;&gt;-->
+
+    <!--/>-->

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    android:paddingStart="5dp"
+    android:windowSoftInputMode="adjustPan">
+
+
+    <!--<merge xmlns:tools="http://schemas.android.com/tools"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--tools:showIn="@layout/expansion_panel_select_date">-->
+
+
+    <!--<io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText-->
+    <!--android:id="@+id/datePickerEditText"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:hint="@string/select_date"/>-->
+
+    <!--<io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText-->
+    <!--android:id="@+id/timePickerEditText"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:hint="@string/select_time"/>-->
+
+
+    <LinearLayout
+        android:id="@+id/llDatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="8dp"
+
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical">
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="Enter Date"-->
+        <!--android:textColor="@color/orange_light"-->
+        <!---->
+        <!--/>-->
+
+
+        <TextView
+            android:id="@+id/etDatePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_date"
+            android:padding="10dp"
+            android:textDirection="rtl"
+            android:textColorHint="@color/orange_light" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTimePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical">
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="Enter Date"-->
+        <!--android:textColor="@color/orange_light"-->
+
+
+        <!--/>-->
+
+        <TextView
+            android:id="@+id/etTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_time"
+            android:padding="10dp"
+            android:textDirection="rtl"
+
+            android:textColorHint="@color/orange_light" />
+
+    </LinearLayout>
+
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:id="@+id/dateTextInputLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:background="@drawable/rounded_bg"-->
+    <!--android:editable="false"-->
+    <!--android:enabled="false"-->
+    <!--android:focusable="false"-->
+    <!--android:hint="Enter Date"-->
+    <!--android:inputType="none"-->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:paddingBottom="8dp"-->
+    <!--app:hintEnabled="true">-->
+
+    <!--&lt;!&ndash;<io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/datePickerInputEditText"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:hint="@string/select_date"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:dateFormat="yyyy/MM/dd"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:maxDate="01/01/2050"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:minDate="01/01/1981" />&ndash;&gt;-->
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--android:id="@+id/etDatePicker"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@android:color/transparent"-->
+
+    <!--/>-->
+
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:background="@drawable/rounded_bg"-->
+    <!--android:editable="false"-->
+    <!--android:enabled="false"-->
+    <!--android:focusable="false"-->
+    <!--android:hint="Enter Time"-->
+    <!--android:inputType="none"-->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:paddingBottom="8dp"-->
+    <!--app:hintEnabled="true">-->
+
+    <!--&lt;!&ndash;<io.blackbox_vision.datetimepickeredittext.view.TimePickerInputEditText&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/timePickerInputEditText"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:hint="@string/select_time"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:is24HourView="true"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:timeFormat="HH:mm" />&ndash;&gt;-->
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--android:id="@+id/etTimePicker"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:editable="false"-->
+    <!--android:enabled="true"-->
+    <!--android:focusable="false"-->
+    <!--android:inputType="none" />-->
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <include layout="@layout/view_separator" />-->
+
+    <!--<include layout="@layout/back_next" />-->
+
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+//done
+-Fetch the selected cat in case of edit pending/cashed orde
+-working on fetching the selected city/country form cashed/pending order
+-disabling prev timepicker dialog
+-refactoring FetchCats gridview adapter to the lates and best practice
+ firebase recylcer view ui to categories gridview
+
+
+
+//not done
+-refactoring and cleaning the code of FragmentMyOrders that responsible for filtration
+  of all online orders using FirebaseUI
+-Worker manager for uploading images by copressig images then upload them
+-firebaseui recyclercivie adapter inside my orders fragment
+-receiving notification to a specific user/freelancer
+
+=====
+-fetch pic from cam
+========================
+-Handling the Worker and Company Select Cat Conflicts
+-Finishing Company profile
+-Downloading and preview the pdf file into PdfViewer inside Company profile
+-Making the Login as Swipe only one time after the user open the app
+-Refactor the Select loc/cat and attach pdf file design UIs.
+-Fixing some en/ar resources.
+-fullscreen the compo signup activity.
+-Fixing the bug of checking pone already exist operation for signup compo
+-Finishing the compo login
+
+-Working on fixing fetching pic from cam Bug, replacing the exist lib by a new one and refactoring it in all
+ app.
+-Fixing bugs of new android versions build gradle files to serialize the latest versions, such ButterKnife,
+ EasyImagePikers.
+-Testing the mechanism of company through receiving the his requests for a lot of cities/categories with
+ the interaction of users.
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item-->
+<!--        android:id="@+id/finish_work"-->
+<!--        android:title="Finish Work"-->
+<!--        android:visible="true"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:icon="@drawable/ic_done_finish_work"/>-->
+
+    <item
+        android:id="@+id/finish_work"
+        android:title="@string/finish_work"
+        android:visible="false"
+        app:showAsAction="ifRoom"
+       />
+
+</menu>

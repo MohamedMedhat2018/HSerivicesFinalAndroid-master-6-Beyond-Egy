@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/logOut"
+        android:icon="@drawable/log_out_black"
+        android:title="@string/log_out"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/close_black_24dp"
+        android:title="@string/delete_account"
+        app:showAsAction="ifRoom"
+
+        />
+    <!--<item-->
+    <!--android:categoryName="Remove photo"-->
+    <!--android:id="@+id/removePhoto"-->
+    <!--/>-->
+
+</menu>

@@ -1,0 +1,128 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_customer_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layoutDirection="rtl"
+    app:cardCornerRadius="15dp">
+
+    <!--<androidx.cardview.widget.CardView-->
+    <!--android:id="@+id/cv_customer_order"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--&gt;-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray1">
+
+            <ImageView
+                android:id="@+id/iv_cm_order_img"
+                android:layout_width="match_parent"
+                android:layout_height="174dp"
+                android:src="@drawable/seyana_logo_no_bg" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="marquee"
+                        android:text="@string/from" />
+
+                    <TextView
+                        android:id="@+id/tv_order_cm_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="marquee"
+                        android:textDirection="rtl"
+                        android:text="3/3/2003" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_cm_order_coast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:ellipsize="marquee"
+                    android:text="$200"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ellipsize="marquee"
+                        android:text="@string/to" />
+
+                    <TextView
+                        android:id="@+id/tv_order_cm_end_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="25/5/19" />
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_customer_order_time"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_toRightOf="@id/order_start_date"-->
+                    <!--android:text="1:00 AM" />-->
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_cm_ordr_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0dp"
+                    android:ellipsize="marquee"
+                    android:text="Working" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

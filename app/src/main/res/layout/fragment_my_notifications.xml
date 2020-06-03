@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <com.google.android.gms.ads.AdView android:id="@+id/adView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="false"-->
+<!--        android:layout_alignParentBottom="false"-->
+<!--        ads:adSize="BANNER"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        ads:adUnitId="@string/Ad_UNIT_ID_BANNER"-->
+<!--        />-->
+
+
+<!--<RelativeLayout-->
+<!--    android:layout_below="@id/adView"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/swipeRefreshLayout"-->
+<!--        android:layout_below="@id/adView"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvNotifications"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/white"-->
+<!--            android:visibility="gone"-->
+<!--            android:padding="5dp" />-->
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+<!--    <include layout="@layout/login_before"-->
+<!--        android:visibility="visible"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvNoNotifi"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/no_notification_yet"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:gravity="center"-->
+<!--        android:visibility="gone"-->
+<!--        android:drawableStart="@drawable/empty"-->
+
+<!--        />-->
+
+<!--    &lt;!&ndash;    <com.google.android.material.floatingactionbutton.FloatingActionButton&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:visibility="gone" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="match_parent">&ndash;&gt;-->
+
+<!--    &lt;!&ndash;        <ListView&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:id="@+id/lvNotofications"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;            tools:listitem="@layout/layout_list_item_notifi" />&ndash;&gt;-->
+
+<!--    &lt;!&ndash;    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>&ndash;&gt;-->
+
+<!--    <include-->
+<!--        android:id="@+id/progress"-->
+<!--        android:visibility="gone"-->
+<!--        layout="@layout/my_custom_progress" />-->
+<!--</RelativeLayout>-->
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNotifications"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="visible"
+                tools:listitem="@layout/notification_item"
+                android:padding="5dp" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include layout="@layout/login_before"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tvNoNotifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_notification_yet"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:drawableStart="@drawable/empty"
+
+            />
+
+        <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:visibility="gone" />-->
+
+        <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent">-->
+
+        <!--        <ListView-->
+        <!--            android:id="@+id/lvNotofications"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            tools:listitem="@layout/layout_list_item_notifi" />-->
+
+        <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+        <include
+            android:id="@+id/progress"
+            android:visibility="gone"
+            layout="@layout/my_custom_progress" />
+    </RelativeLayout>
+
+
+</LinearLayout>

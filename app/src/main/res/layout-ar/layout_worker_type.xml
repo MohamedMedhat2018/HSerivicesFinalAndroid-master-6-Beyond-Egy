@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+
+    <co.ceryle.segmentedbutton.SegmentedButtonGroup
+        android:id="@+id/segmentedButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="0dp"
+        app:sbg_animateSelector="fastOutSlowIn"
+        app:sbg_animateSelectorDuration="500"
+        android:visibility="gone"
+        app:sbg_backgroundColor="@color/white"
+        app:sbg_dividerColor="@color/orange_light_dark"
+        app:sbg_dividerPadding="0dp"
+        app:sbg_dividerRadius="5dp"
+        app:sbg_dividerSize="2dp"
+        app:sbg_position="0"
+        app:sbg_radius="0dp"
+        app:sbg_ripple="false"
+        app:sbg_rippleColor="@color/transparent"
+        app:sbg_selectorColor="@color/orange_light">
+
+        <co.ceryle.segmentedbutton.SegmentedButton
+            android:id="@+id/segmentedBtnFreelancer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:sb_text="@string/freelancer"
+            android:paddingEnd="70dp"
+            app:sb_textColor="@color/md_grey_500"
+            app:sb_textColor_onSelection="@color/white" />
+
+        <co.ceryle.segmentedbutton.SegmentedButton
+            android:id="@+id/segmentedBtnCompany"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:sb_text=""
+            android:paddingEnd="85dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:sb_textColor="@color/md_grey_500"
+            app:sb_textColor_onSelection="@color/white" />
+
+        <!--        <co.ceryle.segmentedbutton.SegmentedButton-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            app:sb_text="Button 3"/>-->
+    </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+
+            >
+
+            <TextView
+                android:id="@+id/tvFree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:background="@color/Orange"
+                android:gravity="center"
+                android:text="@string/freelancer"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvCompany"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/Orange"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        app:cardBackgroundColor="@color/white"-->
+    <!--        app:cardCornerRadius="20dp"-->
+    <!--        app:cardElevation="5dp"-->
+    <!--        app:contentPadding="0dp">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="horizontal"-->
+
+    <!--            >-->
+
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_margin="1dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:cardBackgroundColor="@color/orange_light"-->
+    <!--                app:cardCornerRadius="0dp"-->
+    <!--                app:cardElevation="0dp"-->
+    <!--                app:contentPadding="0dp"-->
+
+    <!--                >-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tvFreelancer"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:background="@color/transparent"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:padding="20dp"-->
+    <!--                    android:textSize="20dp"-->
+    <!--                    android:text="Freelancer"-->
+    <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
+
+    <!--            </androidx.cardview.widget.CardView>-->
+
+
+    <!--            &lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:id="@+id/tvFreelancer"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:background="@color/orange_light"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:padding="20dp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:text="Freelancer"&ndash;&gt;-->
+    <!--            &lt;!&ndash;android:textAppearance="@style/TextAppearance.AppCompat.Large" />&ndash;&gt;-->
+
+    <!--            <View-->
+    <!--                android:layout_width="1dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:background="@color/grey_600"-->
+
+    <!--                />-->
+
+
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_margin="1dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="0dp"-->
+    <!--                app:cardElevation="0dp"-->
+    <!--                app:contentPadding="0dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tvCompanyProvider"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:textColor="@color/Orange"-->
+    <!--                    android:padding="20dp"-->
+    <!--                    android:textSize="20dp"-->
+    <!--                    android:text="Company provider"-->
+    <!--                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
+
+    <!--            </androidx.cardview.widget.CardView>-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+</LinearLayout>

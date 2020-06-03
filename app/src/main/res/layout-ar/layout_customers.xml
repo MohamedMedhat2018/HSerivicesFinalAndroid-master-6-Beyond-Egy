@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="false"
+    app:contentPadding="10dp"
+
+    >
+
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        app:shimmer_animation_duration="@integer/anim_duration_shimmer"
+        app:shimmer_color="@color/grey_200"
+        app:shimmer_reverse_animation="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--            <ScrollView-->
+            <!--                android:id="@+id/scrollViewCustomer"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:scrollbars="none">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:orientation="vertical">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="top|start"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginTop="-5dp"-->
+                <!--android:src="@drawable/ic_bookmark_24dp" />-->
+
+                <TextView
+                    android:id="@+id/tvLoginAsCustomer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="0"
+                    android:ellipsize="marquee"
+                    android:padding="1dp"
+                    android:text="@string/customer"
+                    android:textAlignment="center"
+
+                    android:textColor="#FF9800"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="0"
+                    android:background="@color/gray3"
+
+
+                    />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="50"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/customer4" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="50"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/login_customer_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/button_background1"
+                        android:clickable="true"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/enter"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvCustomerSkipRegisteration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/skip"
+                        android:textAllCaps="false"
+                        android:textColor="@color/orange_dark"
+                        android:textSize="17sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--                </LinearLayout>-->
+            <!--            </ScrollView>-->
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/login_as_customer_hint"
+                layout="@layout/login_as_customer_hint" />
+
+
+        </RelativeLayout>
+
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+
+</androidx.cardview.widget.CardView>

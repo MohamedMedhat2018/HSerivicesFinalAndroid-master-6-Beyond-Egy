@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbarEditProfile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Orange"
+    android:minHeight="?attr/actionBarSize"
+    app:navigationIcon="@drawable/back_white"
+    android:layoutDirection="ltr"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/ivEditOrderToolbar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:visibility="visible"
+            android:paddingRight="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/edit"
+
+            />
+
+<!--       -->
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Email is required"
+    android:visibility="visible"
+    android:textColor="@color/red"
+    android:layout_centerVertical="true"
+    android:paddingStart="10dp"
+    android:textSize="17sp"
+    android:layout_marginBottom="8dp"
+    android:textAllCaps="false"
+    android:drawableEnd="@drawable/error"
+    android:gravity="center_vertical"
+    android:drawablePadding="0dp"
+    tools:showIn="@layout/activity_worker_register"
+
+    />
+<!--<RelativeLayout android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:paddingBottom="5dp"-->
+<!--    android:paddingEnd="5dp"-->
+
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:tools="http://schemas.android.com/tools"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Email is required"-->
+<!--        android:id="@+id/tvError"-->
+<!--        android:visibility="visible"-->
+<!--        android:textColor="@color/red"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:textSize="17sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:drawablePadding="0dp"-->
+<!--        tools:showIn="@layout/activity_worker_register"-->
+
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="20dp"-->
+<!--        android:src="@drawable/error"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        />-->
+
+
+<!--</RelativeLayout>-->

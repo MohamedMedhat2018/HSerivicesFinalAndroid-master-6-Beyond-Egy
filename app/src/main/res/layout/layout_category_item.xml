@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--<androidx.cardview.widget.CardView-->
+
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_margin="10dp"-->
+<!--    android:layout_marginBottom="10dp"-->
+<!--    android:clickable="false"-->
+<!--    android:foreground="?android:attr/selectableItemBackground"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="7dp"-->
+<!--    android:paddingBottom="0dp"-->
+<!--    app:cardBackgroundColor="@color/white"-->
+<!--    app:cardCornerRadius="5dp"-->
+<!--    app:cardElevation="0dp">-->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llCategoryHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@color/transparent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@color/White"
+            android:scaleType="centerCrop"
+            android:src="@drawable/seyana_logo" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/ivIcon"
+            android:background="@color/White"
+            android:freezesText="true"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:text="Painting"
+            android:textColor="@color/md_grey_900"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="1px"-->
+    <!--        android:layout_marginLeft="5dp"-->
+    <!--        android:layout_marginRight="5dp"-->
+    <!--        android:background="@color/Gray" />-->
+
+
+    <include layout="@layout/view_separator" />
+
+</LinearLayout>
+
+
+    <!--</androidx.cardview.widget.CardView>-->
+
+
+
+
+

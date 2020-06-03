@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:weightSum="10">
+
+
+        <RelativeLayout
+            android:id="@+id/userPhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+
+            android:gravity="bottom">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/ivUserPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:src="@mipmap/account"
+                app:siBorderColor="@color/Orange"
+                app:siBorderWidth="3dp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:visibility="visible"
+                app:SpinKit_Color="@color/white"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/llFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/profile_name"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvArName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+
+                    android:text="Mohmed Mehat Hosny"
+                    android:textColor="@color/Black"
+                    android:textSize="19sp"
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/profile_email"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvEnName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+
+                    android:text="Mohmed Mehat Hosny"
+                    android:textColor="@color/Black"
+                    android:textSize="19sp"
+
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/profile_email"
+                    android:visibility="gone" />
+
+                <TextView
+
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:inputType="textEmailAddress"
+                    android:padding="5dp"
+                    android:text="mmm@gmail.com"
+                    android:textColor="@color/Black"
+                    android:textSize="19sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,499 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "http://dl.bintray.com/hellmannmaicon/android" }
+
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url "http://dl.bintray.com/hellmannmaicon/android" }
+
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.ahmed.homeservices"
+//        minSdkVersion 20
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 28
+        versionName "1.000028"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+//    Google introduced a new App Bundle format to split apk files in smaller sizes when they’re
+//    being installed on the client devices. However, this means that we cannot have dynamic
+//    language changes in our applications.
+//            To prevent that split we need to add extra lines in our build.gradle file
+//    inside the app folder like below.
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+
+}
+
+dependencies {
+
+//
+//
+//    def dagger_version = '2.25.2'
+//    api "com.google.dagger:dagger:$dagger_version"
+//    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+
+
+// 1. Use Guava in your implementation only:
+//    implementation("com.google.guava:guava:28.2-jre")
+//
+//    // 2. Use Guava types in your public API:
+//    api("com.google.guava:guava:28.2-jre")
+
+    // 3. Android - Use Guava in your implementation only:
+//    implementation("com.google.guava:guava:28.2-android")
+
+    // 4. Android - Use Guava types in your public API:
+//    api("com.google.guava:guava:28.2-android")
+
+
+    implementation "com.github.Kennyc1012:BottomSheetMenu:3.0.1"
+
+    implementation 'io.michaelrocks:libphonenumber-android:8.10.22'
+
+    implementation 'com.github.TutorialsAndroid:KAlertDialog:v7.0.19'
+
+
+    implementation "com.mixpanel.android:mixpanel-android:5.6.6"
+
+
+    implementation 'com.kazakago.cryptore:cryptore:1.3.0'
+
+
+    implementation 'android.arch.work:work-runtime:1.0.1'
+
+//    For androidWM supports the invisible digital watermarks (package size: 1Mb):
+//    implementation 'com.huangyz0918:androidwm:0.2.3'
+//    For androidWM-light only supports the visible watermarks (package size: 28Kb):
+    implementation 'com.huangyz0918:androidwm-light:0.1.2'
+
+
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-3'
+
+
+    // If you are deploying an Android X based application
+    implementation 'com.github.javinator9889:localemanager:1.1X'
+    // If you are deploying an Android AppCompat based application
+//    implementation 'com.github.javinator9889:localemanager:1.1'
+
+    implementation 'com.github.kaushikthedeveloper:double-back-press:0.0.1'
+
+    implementation 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2'
+//    implementation 'com.marlonmafra.android.widget:segmented-tab:1.1.0'
+
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'
+
+//    implementation 'com.github.MikeOrtiz:TouchImageView:1.4.0' // Support Lib
+    // or
+//    implementation 'implementationcom.github.MikeOrtiz:TouchImageView:2.2.0' // Android X
+
+
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
+//    implementation 'com.mobsandgeeks:android-saripaar:(latest version)'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+
+    // latest stable
+    def koin_version = '2.0.1'
+    // Koin AndroidX Scope features
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+// Koin AndroidX ViewModel features
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+// Koin AndroidX Experimental features
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
+
+
+    implementation 'com.github.devendroid:ReadMoreOption:1.0.2'
+
+
+//    implementation 'org.apache.commons:commons-collections4:4.3'
+//    implementation 'com.github.FrangSierra:RxFirebase:1.5.6'
+
+
+//    implementation 'com.github.orbismobile:android-MaterialPills:1.0.1'
+//    implementation 'com.github.RobertApikyan:SegmentedControl:1.2.0'
+//    implementation 'com.github.ceryle:SegmentedButton:v2.0.2'
+
+
+//    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+
+
+    //requires with AndroidX
+    implementation 'com.github.florent37:shapeofview:1.4.7'
+//to use before AndroidX
+//    dependencies {
+//        implementation 'com.github.florent37:shapeofview:1.3.2'
+//    }
+
+    implementation 'com.github.andrefrsousa:SuperBottomSheet:1.5.0'
+
+//    implementation 'com.github.Pierry:Progress:1.5'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+
+
+    //steppers
+//    implementation 'com.kofigyan.stateprogressbar:stateprogressbar:1.0.0'
+//    implementation 'com.github.canner:android-stepsview:1.2'
+
+    implementation 'com.redmadrobot:input-mask-android:5.0.0'
+    implementation 'me.zhanghai.android.materialratingbar:library:1.3.2'
+
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
+
+    implementation project(':meowbottomnavigation')
+//    implementation 'com.etebarian:meow-bottom-navigation:1.0.4'
+
+
+    //An android image compression library.
+//    implementation 'id.zelory:compressor:3.0.0'
+    implementation 'id.zelory:compressor:2.1.0'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+
+//    implementation 'com.vincent.filepicker:MultiTypeFilePicker:1.0.8'
+
+
+    //requires with AndroidX
+    implementation 'com.github.florent37:shapeofview:1.4.7'
+//to use before AndroidX
+//        implementation 'com.github.florent37:shapeofview:1.3.2'
+
+    implementation 'br.com.forusers.heinsinputdialogs:input-dialogs-library:0.1.4'
+
+    // implementation 'com.github.satyan:sugar:1.3'
+//    implementation 'com.github.satyan:sugar:1.4'
+//    implementation 'com.github.satyan:sugar:1.5'
+    implementation 'br.com.forusers.heinsinputdialogs:input-dialogs-library:0.1.4'
+
+
+//    implementation 'com.github.razir.progressbutton:progressbutton:1.0.3'
+//    implementation 'br.com.simplepass:loading-button-android:2.1.5'
+//    implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+//    implementation 'com.nihaskalam.android:progress-button:1.0.1'
+
+    //such as EasyPerm
+//    implementation 'com.github.tajchert:nammu:1.4.0'
+//    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.0.0'
+    // for experimental rx picker
+//    implementation 'com.github.esafirm.android-image-picker:rximagepicker:2.0.0'
+
+//    implementation project(":datetimepickeredittext")
+    implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.4.0'
+
+//    implementation 'com.robertlevonyan.view:MaterialChipView:1.2.5'
+
+    implementation 'com.github.florent37:expansionpanel:1.2.2'
+
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+//    implementation 'com.github.pinball83:masked-edittext:1.0.4'
+
+
+    implementation('com.alimuzaffar.lib:pinentryedittext:2.0.6') {
+        // Exclude is only needed if you already havereflect
+        // androidx.appcompat as a dependency in your app.
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+
+    implementation 'com.irozon.sneaker:sneaker:2.0.0'
+
+//    implementation 'com.hbb20:ccp:2.2.9'
+
+
+//kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+
+
+    //crash reporting
+//    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+    //last version
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    implementation project(':library')
+//        implementation project(':SegmentedControl')
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+//    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+//    implementation 'com.google.firebase:firebase-invites:17.0.0'
+//    implementation 'com.google.firebase:firebase-ads:17.2.1'
+    implementation 'com.google.firebase:firebase-core:17.2.3'
+    implementation 'com.google.android.gms:play-services-tagmanager:17.0.0'
+
+    implementation 'com.google.firebase:firebase-messaging:20.1.1'
+//    implementation 'com.google.firebase:firebase-config:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+//    implementation 'com.firebase:firebase-client-android:2.5.2'
+    implementation 'com.google.firebase:firebase-appindexing:19.1.0'
+//    implementation 'com.google.firebase:firebase-inappmessaging-display:17.1.1'
+    implementation 'com.google.firebase:firebase-firestore:21.4.1'
+
+
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.android.support:appcompat-v7:'
+
+//    implementation 'com.google.android.material:material-rc01'
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation "org.robolectric:robolectric:4.3.1"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+//    implementation 'com.roughike:bottom-bar:2.3.1'
+    implementation 'me.relex:circleindicator:2.1.4@aar'
+    implementation 'de.hdodenhof:circleimageview:3.0.2'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.3@aar'
+
+
+    implementation 'com.github.gastricspark:scrolldatepicker:0.0.1'
+//    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    //implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+
+//    implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
+
+    implementation 'com.jakewharton:butterknife:10.2.0'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.0'
+
+
+    //social media  facebook  login
+//    implementation 'com.facebook.android:facebook-login:4.41.0'
+    implementation 'me.toptas.fancyshowcase:fancyshowcaseview:1.1.5'
+//    implementation 'com.github.clans:fab:1.6.4'
+
+
+    implementation 'com.daimajia.easing:library:2.1@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    implementation 'com.github.dmytrodanylyk.shadow-layout:library:1.0.3'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'cn.pedant.sweetalert:library:1.3'
+    //implementation 'com.github.Leogiroux:sweet-alert-dialog:1.3'
+//    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+
+    implementation 'com.github.florent37:viewtooltip:1.2.2'
+
+
+//    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
+
+    //eventbus or otto
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+//    def lifecycle_version = "2.1.0"
+    // ViewModel and LiveData
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    // alternatively - just ViewModel
+    //implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version" // For Kotlin use lifecycle-viewmodel-ktx
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
+    // alternatively - just LiveData
+//    implementation "androidx.lifecycle:lifecycle-livedata:2.1.0"
+    // alternatively - Lifecycles only (no ViewModel or LiveData). Some UI
+    //     AndroidX libraries use this lightweight import for Lifecycle
+//    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // For Kotlin use kapt instead of annotationProcessor
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+//    implementation "androidx.lifecycle:lifecycle-common-java8:2.1.0"
+    // optional - ReactiveStreams support for LiveData
+//    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version" // For Kotlin use lifecycle-reactivestreams-ktx
+    // optional - Test helpers for LiveData
+//    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+
+
+    //android arc.
+//    def arcVersion = "1.1.1"
+//    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.1.0'
+
+
+    //room database
+    def roomVersion = "1.1.1"
+//    implementation 'androidx.room:room-runtime:2.1.0'
+//    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+//    for Kotlin change the 'annotationProcessor' keyword to 'kapt' in gradle file.
+//    kapt 'androidx.room:room-compiler:2.1.0'
+//    androidTestImplementation 'androidx.room:room-testing:2.1.0'
+
+
+// For developers using AndroidX in their applications
+    implementation 'pub.devrel:easypermissions:3.0.0'
+    // For developers using the Android Support Library
+//    implementation 'pub.devrel:easypermissions:2.0.1'
+
+//    implementation 'com.github.RobertApikyan:SegmentedControl:1.1.3'
+//    implementation 'info.hoang8f:android-segmented:1.0.6'
+//    implementation 'com.github.orbismobile:android-MaterialPills:1.0.1'
+    implementation 'com.github.ceryle:SegmentedButton:v2.0.2'
+
+//    implementation project(':duo-navigation-drawer')
+
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.10.0'
+
+    implementation 'com.github.abdularis:circularimageview:1.4'
+
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.0.0'
+    // for experimental rx picker
+//    implementation 'com.github.esafirm.android-image-picker:rximagepicker:2.0.0'
+
+    implementation 'com.github.jkwiecien:EasyImage:3.0.3'
+
+    implementation 'com.github.rubensousa:bottomsheetbuilder:1.6.1'
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+//    implementation project(path: ':library')
+
+
+    implementation 'me.relex:circleindicator:2.1.4'
+
+
+    implementation 'com.asksira.android:loopingviewpager:1.2.0'
+
+    implementation 'com.asksira.android:bsimagepicker:1.2.2'
+
+    implementation 'com.stepstone.apprating:app-rating:2.3.1'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+
+    //show password
+    implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
+
+
+    // For Media picker
+//    implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
+//    implementation 'com.github.AnilFurkanOkcun:UWMediaPicker-Android:1.1.0'
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+//    compile project(path: ':multilamp')
+
+    //show case for highlight
+//    implementation 'com.github.ujwalthote:MultiLamp:2.0'
+
+    //show case for highlight
+
+    implementation 'com.github.deano2390:MaterialShowcaseView:1.3.4'
+
+
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+
+
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:6.2.0'
+    // FirebaseUI for Cloud Firestore
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    // FirebaseUI for Firebase Auth
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
+    // FirebaseUI for Cloud Storage
+    implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
+
+    //kotlin-reflect
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.61"
+
+
+    implementation 'com.github.AnuraganuPunalur:Multi-Selection-Spinner-Android:1.0'
+
+
+    //pdf
+    implementation 'com.vincent.filepicker:MultiTypeFilePicker:1.0.8'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+//    implementation 'com.github.manishkummar21:AndroidPdfViewer:1.0'
+//    implementation "com.pdfview:pdfview-android:1.0.0"
+    implementation 'es.voghdev.pdfviewpager:library:1.1.0'
+
+
+    compile 'com.github.stfalcon:multiimageview:0.1'
+
+
+}
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == "com.android.support") {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "26.+"
+            }
+        }
+    }
+
+    all*.exclude group: 'com.google.guava', module: 'listenablefuture'
+
+}
+//
+//
+//configurations.all {
+//    resolutionStrategy.force 'com.android.support:support-v4:24.0.0'
+//}
+

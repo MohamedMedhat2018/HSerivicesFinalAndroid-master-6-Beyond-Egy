@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_customer_worker_login">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1.5"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="15dp"
+            android:visibility="visible"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:gravity="top"
+                android:text="@string/welcome_back"
+                android:textColor="@color/grey_206"
+                android:textSize="22sp"
+                android:textStyle="normal"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:text="@string/enter"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.75"-->
+            <!--android:text="lm"-->
+            <!--android:visibility="invisible" />-->
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:id="@+id/scrollViewLogin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="8.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="50dp"
+                    android:src="@drawable/seyana_logotest"
+                    android:visibility="gone" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="@color/grey_401"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:contentPadding="20dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp">
+
+
+                            <LinearLayout
+                                android:id="@+id/llPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="15dp">
+
+
+                                <!--<TextView-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:gravity="center"-->
+                                <!--android:id="@+id/tvCountryCode"-->
+                                <!--android:text="+971"-->
+                                <!--android:textColor="@color/white" />-->
+
+
+                                <TextView
+                                    android:id="@+id/tvCountryCode"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="@string/_20"
+                                    android:textColor="@color/black" />
+
+                                <EditText
+                                    android:id="@+id/etEnterPhone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="0dp"
+                                    android:background="@null"
+                                    android:gravity="right"
+                                    android:hint="@string/phone_number"
+                                    android:inputType="phone"
+                                    android:padding="8dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/gray3"
+                                    android:textDirection="rtl">
+
+                                    <requestFocus tools:ignore="TooDeepLayout" />
+                                </EditText>
+
+                                <!--                            <com.github.pinball83.maskededittext.MaskedEditText-->
+                                <!--                                android:id="@+id/etEnterPhone"-->
+                                <!--                                android:layout_width="match_parent"-->
+                                <!--                                android:layout_height="wrap_content"-->
+                                <!--                                android:layout_marginTop="0dp"-->
+                                <!--                                android:background="@null"-->
+                                <!--                                android:gravity="center_vertical"-->
+                                <!--                                android:hint="@string/phone_number"-->
+                                <!--                                android:inputType="phone"-->
+                                <!--                                android:padding="8dp"-->
+                                <!--                                android:textColor="@color/black"-->
+                                <!--                                android:textColorHint="@color/gray3"-->
+                                <!--                                app:mask=" (**) (***) (****)"-->
+                                <!--                                app:notMaskedSymbol="*"-->
+                                <!--                                app:maskIconColor="@color/colorPrimary"-->
+                                <!--                                />-->
+
+                                <!--                            <com.github.pinball83.maskededittext.MaskedEditText-->
+                                <!--                                android:id="@+id/etEnterPhone"-->
+                                <!--                                android:layout_width="match_parent"-->
+                                <!--                                android:layout_height="wrap_content"-->
+                                <!--                                android:layout_marginTop="0dp"-->
+                                <!--                                android:background="@null"-->
+                                <!--                                android:gravity="center_vertical"-->
+                                <!--                                android:hint="@string/phone_number"-->
+                                <!--                                android:inputType="phone"-->
+                                <!--                                android:padding="8dp"-->
+                                <!--                                android:textColor="@color/black"-->
+                                <!--                                android:textColorHint="@color/gray3"-->
+                                <!--                                app:mask=" ** *** ****"-->
+                                <!--                                app:notMaskedSymbol="*"-->
+                                <!--                                app:maskIconColor="@color/colorPrimary"-->
+                                <!--                                />-->
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.44dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@color/gray3" />
+
+                            <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="0.44dp"-->
+                            <!--android:layout_marginLeft="8dp"-->
+                            <!--android:layout_marginRight="8dp"-->
+                            <!--android:background="@color/white" />-->
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:visibility="visible">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/etEnterPass"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:gravity="right"
+                                    android:hint="@string/password"
+                                    android:inputType="textPassword"
+                                    android:padding="8dp"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/gray3"
+
+                                    android:visibility="visible" />
+
+
+                                <ImageView
+                                    android:id="@+id/ivShowHidePass"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginBottom="9dp"
+                                    android:src="@drawable/ic_visibility_off"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+
+                            <!--                           <EditText-->
+                            <!--                               android:id="@+id/etEnterPass"-->
+                            <!--                               android:layout_width="match_parent"-->
+                            <!--                               android:layout_height="wrap_content"-->
+                            <!--                               android:layout_marginTop="20dp"-->
+                            <!--                               android:background="@null"-->
+                            <!--                               android:gravity="right"-->
+                            <!--                               android:hint="@string/password"-->
+                            <!--                               android:inputType="textPassword"-->
+                            <!--                               android:padding="8dp"-->
+                            <!--                               android:textColor="@color/black"-->
+                            <!--                               android:textColorHint="@color/gray3"-->
+                            <!--                               android:visibility="visible"-->
+
+                            <!--                               />-->
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.44dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@color/gray3" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/button_background1"
+                            android:text="@string/enter"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvForgetPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/transparent"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/forget_password"
+                            android:textAllCaps="false"
+                            android:textColor="@color/orange_dark"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="8dp"
+                            android:orientation="horizontal"
+                            android:weightSum="10">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0.44dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="4"
+                                android:background="@color/gray2" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="@string/or"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0.44dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="4"
+                                android:background="@color/gray2" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="30dp"
+
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/acme"
+                                android:gravity="center"
+                                android:padding="0dp"
+                                android:text="@string/create_an_account"
+                                android:textColor="@color/gray3"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvRegister"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="0dp"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/acme"
+                                android:padding="0dp"
+                                android:text="@string/create_account"
+                                android:textAllCaps="false"
+                                android:textColor="@color/orange_dark"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_weight="0.75"-->
+        <!--android:gravity="center">-->
+
+        <!--<Button-->
+        <!--android:layout_width="199dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center|center_horizontal"-->
+        <!--android:background="@drawable/edit_text_background"-->
+        <!--android:text="Submit"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="@color/white1"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+</merge>

@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+	package
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:3:5-52
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:2:5-63
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:6:22-64
+application
+ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:8:5-10:43
+	android:label
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:10:9-41
+	android:allowBackup
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml:9:9-35
+uses-sdk
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/HservicesFinalWork/HSerivicesFinalAndroid/duo-navigation-drawer/src/main/AndroidManifest.xml

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <com.asksira.loopingviewpager.LoopingViewPager
+        android:id="@+id/looping_view_pager_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:autoScroll="true"
+        app:isInfinite="true"
+        app:scrollInterval="3000" />
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/llIndicator"
+        android:background="@color/transparent"
+        android:layout_height="wrap_content">
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/indicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:piv_animationDuration="200"
+            app:piv_animationType="slide"
+            android:layout_margin="10dp"
+            app:piv_interactiveAnimation="true"
+            />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardNoImages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_attached_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/seyana_logo_no_bg"
+            android:visibility="visible"
+            app:riv_border_color="@color/transparent"
+            app:riv_border_width="1dip"
+            app:riv_corner_radius="5dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+
+        <!--        <com.ortiz.touchview.TouchImageView-->
+        <!--            android:id="@+id/iv_attached_photo"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/seyana_logo" />-->
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

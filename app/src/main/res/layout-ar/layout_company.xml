@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layoutDirection="ltr"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="false"
+    app:contentPadding="10dp"
+
+    >
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        app:shimmer_animation_duration="@integer/anim_duration_shimmer"
+        app:shimmer_color="@color/grey_200"
+        app:shimmer_reverse_animation="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--        <ScrollView-->
+            <!--            android:id="@+id/scrollViewWorker"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:scrollbars="none">-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:orientation="vertical">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:weightSum="100">
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="top|start"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginTop="-5dp"-->
+                <!--android:src="@drawable/ic_bookmark_24dp" />-->
+
+                <TextView
+                    android:id="@+id/tvLoginAscompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="0"
+                    android:ellipsize="marquee"
+                    android:padding="1dp"
+                    android:text="@string/company"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange_light"
+                    android:textSize="20sp"
+
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/gray3"
+
+
+                    />
+
+                <!--<TextView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+
+                <!--android:drawableLeft="@drawable/sellect"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text=" You Can choose any Service "-->
+
+                <!--android:textAlignment="gravity"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange"-->
+
+
+                <!--/>-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/sellect"-->
+
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="choose the right time and date for you"-->
+
+
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange"></View>-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/sellect"-->
+
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="choose right offer for your budget"-->
+
+
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange"></View>-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:drawableLeft="@drawable/sellect"-->
+
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="choose the right time and date for you"-->
+
+
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="#110404"-->
+                <!--android:textSize="12sp" />-->
+
+
+                <!--/>-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange" />-->
+
+                <!--<TextView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+
+                <!--android:drawableLeft="@drawable/sellect"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text=" You Can Contact with login Service "-->
+
+                <!--android:textAlignment="gravity"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange"-->
+
+
+                <!--/>-->
+
+                <!--<TextView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+
+                <!--android:drawableLeft="@drawable/sellect"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="All services are available for a fixed amount throughout the year"-->
+
+                <!--android:textAlignment="gravity"-->
+                <!--android:textColor="@color/gray"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:background="@color/Orange" />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="70">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="50dp"
+                        android:padding="50dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/company" />
+                </LinearLayout>
+
+
+                <!--<com.flaviofaria.kenburnsview.KenBurnsView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:src="@drawable/worker3" />-->
+
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_weight="20"-->
+                <!--                    >-->
+
+                <!--                    <Button-->
+                <!--                        android:id="@+id/login_company_btn"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent"-->
+                <!--                        android:layout_gravity="center_horizontal"-->
+                <!--                        android:layout_marginStart="20dp"-->
+                <!--                        android:layout_marginTop="0dp"-->
+                <!--                        android:layout_marginEnd="20dp"-->
+                <!--                        android:layout_marginBottom="20dp"-->
+                <!--                        android:background="@drawable/button_background1"-->
+                <!--                        android:clickable="true"-->
+                <!--                        android:ellipsize="marquee"-->
+                <!--                        android:focusable="true"-->
+                <!--                        android:paddingStart="10dp"-->
+                <!--                        android:paddingEnd="10dp"-->
+                <!--                        android:text="@string/enter"-->
+                <!--                        android:textAllCaps="false"-->
+                <!--                        android:textColor="@color/white"-->
+                <!--                        android:textSize="20sp" />-->
+                <!--                </LinearLayout>-->
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/register_btn"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@null"-->
+                <!--android:gravity="center"-->
+                <!--android:padding="5dp"-->
+                <!--android:text="Skip"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="@color/orange_dark"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textStyle="normal" />-->
+
+            </LinearLayout>
+
+
+            <!--            </LinearLayout>-->
+            <!--        </ScrollView>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/login_company_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_background1"
+                    android:clickable="true"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/enter"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/login_as_company_hint"
+                layout="@layout/login_as_company_hint"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+
+</androidx.cardview.widget.CardView>
