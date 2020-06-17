@@ -150,12 +150,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                 switch (Prefs.getString(Constants.WORKER_LOGGED_AS, "")) {
 
                 }
-
             }
         } else {
 
-
         }
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,17 +166,47 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             }
         });
 
+//        ItemTouchHelper.SimpleCallback simpleTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+//            @Override
+//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+//                int position = viewHolder.getAdapterPosition();
+//                listNotifications.remove(position);
+//                this.notify();
+//                simpleTouchCa llback
+//            }
+//        };
+
+
+//        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleTouchCallback);
+//        itemTouchHelper.attachToRecyclerView(recyclerView);
+
+
         YoYo.with(Techniques.FadeIn)
                 .duration(600)
                 .playOn(holder.itemView);
 
     }
 
+
     @Override
     public int getItemCount() {
         return listNotifications.size();
     }
 
+    public void removeItem(int position) {
+        listNotifications.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void restoreItem(Notification notification, int position) {
+        listNotifications.add(position, notification);
+        notifyItemInserted(position);
+    }
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -187,7 +216,6 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         //        CardView card;
         LinearLayout card;
         ProgressBar progressBar;
-
 
 
         MyViewHolder(View view) {

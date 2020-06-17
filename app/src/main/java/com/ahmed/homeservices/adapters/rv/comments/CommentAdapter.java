@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ahmed.homeservices.R;
 import com.ahmed.homeservices.constants.Constants;
 import com.ahmed.homeservices.fire_utils.RefBase;
-import com.ahmed.homeservices.interfaces.OnFreePostImageClciked;
 import com.ahmed.homeservices.models.CMWorker;
 import com.ahmed.homeservices.models.Comment;
 import com.daimajia.androidanimations.library.Techniques;
@@ -34,6 +33,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
     private Context context;
     private List<Comment> listComment;
     private OnAcceptClicked onAcceptClicked;
+    private OnCallClicked onCallClicked;
 
 
     //    public CommentAdapter(Context context, List<Comment> listComment, ContactsAdapterListener listener) {
@@ -43,16 +43,17 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
 //    }
     private String userType;
     private String exist;
-    private OnFreePostImageClciked onFreePostImageClciked;
+    private Boolean cancel;
 
-    public CommentAdapter(Context context, String exist, List<Comment> listComment,
-                          String userType, OnAcceptClicked onAcceptClicked, OnFreePostImageClciked onFreePostImageClciked) {
+    public CommentAdapter(Context context, String exist, Boolean cancel, List<Comment> listComment,
+                          String userType, OnAcceptClicked onAcceptClicked, OnCallClicked onCallClicked) {
         this.context = context;
         this.onAcceptClicked = onAcceptClicked;
-        this.onFreePostImageClciked = onFreePostImageClciked;
+        this.onCallClicked = onCallClicked;
         this.userType = userType;
         this.listComment = listComment;
         this.exist = exist;
+        this.cancel = cancel;
 
     }
 
@@ -99,6 +100,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                 //Toasty.success(context, "Accept "  + comment.getComment()).show();
             }
         });
+        holder.btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCallClicked.OnCallClicked(comment, position);
+            }
+        });
 
 
         RefBase.refWorker(comment.getFreelancerId())
@@ -128,24 +135,23 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
 //                            });
 
 
-                            if(cmWorker.getWorkerPhoto() != null &&
-                                   cmWorker.getWorkerPhoto().length() != 0){
-                               Picasso.get()
-                                       .load(cmWorker.getWorkerPhoto())
-                                       .into(holder.iv_freelancer_profile, new Callback() {
-                                           @Override
-                                           public void onSuccess() {
-                                               Log.e(TAG, "onSuccess: " );
+                            if (cmWorker.getWorkerPhoto() != null &&
+                                    cmWorker.getWorkerPhoto().length() != 0) {
+                                Picasso.get()
+                                        .load(cmWorker.getWorkerPhoto())
+                                        .into(holder.iv_freelancer_profile, new Callback() {
+                                            @Override
+                                            public void onSuccess() {
+                                                Log.e(TAG, "onSuccess: ");
 //                                               holder.iv_freelancer_profile.setTag(cmWorker.getWorkerPhone());
-                                           }
+                                            }
 
-                                           @Override
-                                           public void onError(Exception e) {
+                                            @Override
+                                            public void onError(Exception e) {
 
-                                           }
-                                       });
-                           }
-
+                                            }
+                                        });
+                            }
 
                         }
                     }
@@ -156,13 +162,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                     }
                 });
 
-        holder.tvComment.setText(comment.getComment() + "   AED" );
-
+        holder.tvComment.setText(comment.getComment() + "   AED");
 
 
         switch (userType) {
             case Constants.CM:
-
 
                 break;
             case Constants.FREELANCER:
@@ -175,6 +179,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                     Log.e(TAG, "ppppppppp: ");
                     if (comment.isSelected()) {
                         holder.btnPrev.setVisibility(View.VISIBLE);
+                        holder.btnCall.setVisibility(View.VISIBLE);
                         holder.btnSendComment.setVisibility(View.GONE);
                         //........
                         holder.ivDone.setVisibility(View.VISIBLE);
@@ -182,13 +187,25 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
                         Log.e(TAG, "hhhhh: ");
                     } else {
                         holder.btnPrev.setVisibility(View.GONE);
+                        holder.btnCall.setVisibility(View.GONE);
                         holder.btnSendComment.setVisibility(View.GONE);
                         Log.e(TAG, "jjjjj: ");
                     }
 
                 } else {
-                    holder.btnSendComment.setVisibility(View.VISIBLE);
-                    Log.e(TAG, "eeeeeeee: ");
+                    Log.e(TAG, "cancel check: Adapter" + cancel);
+
+                    //check is canceled or not to solve notification problem
+                    if (cancel) {
+                        holder.btnSendComment.setVisibility(View.GONE);
+                        Log.e(TAG, "eeeeeeee 2: ");
+
+                    } else {
+                        holder.btnSendComment.setVisibility(View.VISIBLE);
+                        Log.e(TAG, "eeeeeeee 1 ");
+                    }
+
+
                 }
 
                 break;
@@ -198,7 +215,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         YoYo.with(Techniques.FadeIn)
                 .duration(600)
                 .playOn(holder.itemView);
-
 
 
     }
@@ -212,11 +228,16 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
         void OnAcceptClicked(Comment comment, int pos);
     }
 
+    public interface OnCallClicked {
+        void OnCallClicked(Comment comment, int pos);
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvComment;
         TextView tv_worker_name;
         Button btnSendComment;
         Button btnPrev;
+        Button btnCall;
         CircularImageView iv_freelancer_profile;
         ImageView ivDone;
 
@@ -225,10 +246,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
             tvComment = view.findViewById(R.id.tv_comment);
             btnSendComment = view.findViewById(R.id.btn_accept);
             btnPrev = view.findViewById(R.id.btn_prev);
+            btnCall = view.findViewById(R.id.btn_call);
             iv_freelancer_profile = view.findViewById(R.id.iv_freelancer_profile);
             tv_worker_name = view.findViewById(R.id.tv_worker_name);
             ivDone = view.findViewById(R.id.ivDone);
-
 
         }
     }

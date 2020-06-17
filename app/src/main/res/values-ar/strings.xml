@@ -161,7 +161,7 @@
     <string name="previewcomment">تفاصيل اكثر </string>
     <string name="_9_ebn_hany_el_andalosy_nasr_city_cairo_egypt">9 ابن هاني الاندلسي , مدينه نصر , القاهره, مصر </string>
     <string name="you_are_already_submit_an_offer">لقد قمت بارسال عرض لهذا الطلب للتو</string>
-    <string name="enter_6_chars">أدخل ٦ آحرف علي الاقل </string>
+    <string name="enter_6_chars">"weakpassword" = "كلمه المرور ضعيفه،يرجئ تجربه كلمه مرور اخرئ ،يجب ان تكون كلمه المرور اكثر من ٦ احرف،وتحتوي علئ ارقام واحرف صغيره واحرف كبيره ،مثال Ahmed@2020" </string>
     <string name="no_working_requests"> لا يوجد اي طلبات فعاله</string>
     <string name="no_finished_requests_yet">لا توجد طلبات منتهيه حتي الان</string>
     <string name="aed">AED</string>

@@ -150,6 +150,8 @@ public final class Constants {
     public static final String CM = "CM";
     public static final String FREELANCER = "FREELANCER";
 
+    public static final String USER_TYPE = "USER_TYPE";
+
 
     public static final String PENDING = "PENDING";
     public static final String CM_WORKING = "CM_WORKING";

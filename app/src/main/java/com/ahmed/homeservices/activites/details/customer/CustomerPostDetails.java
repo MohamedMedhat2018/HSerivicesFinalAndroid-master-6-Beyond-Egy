@@ -1,6 +1,9 @@
 package com.ahmed.homeservices.activites.details.customer;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -19,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,10 +31,8 @@ import com.ahmed.homeservices.R;
 import com.ahmed.homeservices.activites.meowbottomnavigaion.MainActivity;
 import com.ahmed.homeservices.adapters.rv.comments.CommentAdapter;
 import com.ahmed.homeservices.adapters.view_pager.DemoInfiniteAdapter;
-import com.ahmed.homeservices.bottom_sheet.BottomSheetFragment;
 import com.ahmed.homeservices.constants.Constants;
 import com.ahmed.homeservices.fire_utils.RefBase;
-import com.ahmed.homeservices.interfaces.OnFreePostImageClciked;
 import com.ahmed.homeservices.models.CMWorker;
 import com.ahmed.homeservices.models.Comment;
 import com.ahmed.homeservices.models.Company;
@@ -59,7 +61,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 
-public class CustomerPostDetails extends AppCompatActivity implements CommentAdapter.OnAcceptClicked, OnFreePostImageClciked {
+import static android.Manifest.permission.CALL_PHONE;
+
+public class CustomerPostDetails extends AppCompatActivity implements CommentAdapter.OnAcceptClicked, CommentAdapter.OnCallClicked {
 
     private static final String TAG = "CustomerPostDetails";
     //    @BindView(R.id.tv_customer_order_category)
@@ -117,6 +121,10 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
     RatingBar rb_customer_order_rate;
     @BindView(R.id.tv_customer_order_comment_rate)
     TextView tv_customer_order_comment_rate;
+    @BindView(R.id.tvEditOrderToolbar3)
+    TextView cancelOrder;
+
+    Boolean cancel = false;
 
 
     @Override
@@ -132,7 +140,6 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
         super.onStart();
         Log.e(TAG, "onStart: CustomerPostDetails ");
     }
-
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -177,12 +184,12 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
                             });
                 }
 
-
             } else {
                 Log.e(TAG, "onPostCreate: 4444 ");
                 llSendComment.setVisibility(View.GONE);
                 ll_customer_order_rate.setVisibility(View.GONE);
                 getPassedData();
+                onCancel();
                 accessFields();
                 addTextWatcherToEditTextSendComment();
                 addingTheImagesToLoopViewPager();
@@ -192,12 +199,56 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
         }
     }
 
+    private void onCancel() {
+
+        cancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e(TAG, "cancel request ");
+
+                if (orderRequest.getState().equals(Constants.POST) || orderRequest.getState().equals(Constants.PENDING)) {
+                    Map<String, Object> mapState = new HashMap<>();
+                    mapState.put(Constants.ORDER_STATE, Constants.ORDER_STATE_CANCELLED);
+
+                    RefBase.refRequests(orderRequest.getOrderId())
+                            .updateChildren(mapState)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.e(TAG, " cancel check: onCancel befor" + cancel);
+                                    cancel = true;
+                                    Log.e(TAG, " cancel check: onCancel after" + cancel);
+
+                                    finish();
+                                }
+                            });
+                }
+
+            }
+        });
+    }
+
     private void getPassedData() {
         Bundle extras = getIntent().getExtras();
-        Log.e(TAG, "onCreate: " + extras.toString());
+        Log.e(TAG, "onCreate: extra " + extras.toString());
         if (extras != null) {
             Log.e(TAG, "onCreate: ");
             orderRequest = (OrderRequest) extras.getSerializable(Constants.ORDER);
+            String type = extras.getString(Constants.USER_TYPE);
+            Log.e(TAG, "onCreate: Type is " + type);
+
+
+            if (type.equals(Constants.USER)) {
+                if (orderRequest.getState().equals(Constants.POST) || orderRequest.getState().equals(Constants.PENDING)) {
+                    cancelOrder.setVisibility(View.VISIBLE);
+                } else {
+                    cancelOrder.setVisibility(View.GONE);
+                    cancel = true;
+                }
+            } else {
+                cancelOrder.setVisibility(View.GONE);
+                cancel = true;
+            }
 //            user = (User) extras.getSerializable(Constants.USER);
 //
 //            Picasso.get().load(user.getUserfPhoto()).into(iv_customer_post_img, new Callback() {
@@ -212,7 +263,6 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
 //            tv_customer_post_name.setText(user.getUserName());
 //            tv_customer_post_city.setText(orderRequest.getLocation().getCity());
 //            tv_customer_post_country.setText(orderRequest.getLocation().getCountry());
-
             Log.e(TAG, "43242423: " + orderRequest.getCategoryId());
         }
     }
@@ -253,7 +303,6 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
 
     @BindView(R.id.cardNoImages)
     View cardNoImages;
-
 
     //    @BindView(R.id.llIndicator)
 //    LinearLayout llIndicator;
@@ -390,8 +439,9 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
 
                                                                            Log.e(TAG, "getComment: " + comment.getComment());
                                                                            Log.e(TAG, "getFreelancerId: " + comment.getFreelancerId());
+                                                                           Log.e(TAG, "cancel check: load comments " + cancel);
 
-                                                                           rv_comments.setAdapter(new CommentAdapter(getApplicationContext(), exist,
+                                                                           rv_comments.setAdapter(new CommentAdapter(getApplicationContext(), exist, cancel,
                                                                                    listComments, Constants.USER,
                                                                                    CustomerPostDetails.this, CustomerPostDetails.this));
 
@@ -444,7 +494,7 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
     @Override
     public void OnAcceptClicked(Comment comment, int pos) {
         Log.e(TAG, "OnAcceptClicked: " + comment.isSelected());
-
+        cancelOrder.setVisibility(View.GONE);
 //        for (int i = 0; i < rv_comments.getChildCount(); i++) {
 //            View viewGroup = rv_comments.getChildAt(i);
 //            if (listComments.get(i).isSelected()) {
@@ -557,6 +607,21 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
                                                     tvFullName.setText(company.getCompanyNameInArabic());
                                                     tvPhone.setText(company.getCompanyPhone());
                                                     tvEmail.setText(company.getCompanyEmail());
+//                                                    tvPhone.setOnClickListener(new View.OnClickListener() {
+//                                                        @Override
+//                                                        public void onClick(View view) {
+//                                                            Log.e(TAG, "onDataChange: call company ");
+//                                                            Intent intent = new Intent(Intent.ACTION_CALL);
+//                                                            intent.setData(Uri.parse("tel:+" + company.getCompanyPhone()));
+//                                                            if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+//                                                                startActivity(intent);
+//                                                            } else {
+//                                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                                                                    requestPermissions(new String[]{CALL_PHONE}, 1);
+//                                                                }
+//                                                            }
+//                                                        }
+//                                                    });
                                                     Log.e(TAG, "onDataChange: test company comment 2 ");
 
                                                     Log.e(TAG, "onDataChange: " + company.getCompanyEmail());
@@ -596,6 +661,23 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
                                                     tvFullName.setText(cmWorker.getWorkerNameInArabic());
                                                     tvPhone.setText(cmWorker.getWorkerPhone());
                                                     tvEmail.setText(cmWorker.getWorkerEmail());
+
+//                                                    tvPhone.setOnClickListener(new View.OnClickListener() {
+//                                                        @Override
+//                                                        public void onClick(View view) {
+//                                                            Log.e(TAG, "onDataChange: call Freelancer ");
+//                                                            Intent intent = new Intent(Intent.ACTION_CALL);
+//                                                            intent.setData(Uri.parse("tel:+" + cmWorker.getWorkerPhone()));
+//                                                            if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+//                                                                startActivity(intent);
+//                                                            } else {
+//                                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                                                                    requestPermissions(new String[]{CALL_PHONE}, 1);
+//                                                                }
+//                                                            }
+//                                                        }
+//                                                    });
+
                                                     Log.e(TAG, "onDataChange: " + cmWorker.getWorkerEmail());
                                                     Log.e(TAG, "onDataChange: " + cmWorker.getWorkerNameInEnglish());
                                                     Picasso.get()
@@ -641,50 +723,6 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
 
         }
 
-
-    }
-
-    @Override
-    public void onFreeImageClicked(CMWorker cmWorker, int pos) {
-        if (cmWorker != null) {
-//            Log.e(TAG, "onFreeImageClicked: " + comment.getComment());
-
-
-//            RefBase.refWorker(cmWorker.getFreelancerId())
-//                    .addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                            if (dataSnapshot.exists()) {
-//                                dataSnapshot.getRef().removeEventListener(this);
-//                                CMWorker cmWorker = dataSnapshot.getValue(CMWorker.class);
-////                                                tvFullName.setText(cmWorker.getWorkerNameInArabic());
-////                                                tvEmail.setText(cmWorker.getWorkerEmail());
-//                                Log.e(TAG, "onDataChange: " + cmWorker.getWorkerEmail());
-//                                Log.e(TAG, "onDataChange: " + cmWorker.getWorkerNameInEnglish());
-//                                Log.e(TAG, "onDataChange: " + cmWorker.getWorkerPhoto());
-//
-
-            Bundle bundle = new Bundle();
-//                                bundle.putSerializable(Constants.COMMENT, comment);
-            bundle.putSerializable(Constants.CM_WORKER, cmWorker);
-//                                bundle.getString(Constants.FREE_PHOTO_URL, freePhotoUrl);
-
-            BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
-            bottomSheetFragment.showNow(getSupportFragmentManager(),
-                    BottomSheetFragment.class.getName());
-            bottomSheetFragment.setArguments(bundle);
-
-
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                        }
-//                    });
-
-        }
 
     }
 
@@ -737,5 +775,65 @@ public class CustomerPostDetails extends AppCompatActivity implements CommentAda
 //                });
     }
 
+    @Override
+    public void OnCallClicked(Comment comment, int pos) {
+        if (TextUtils.equals(comment.getType(), Constants.COMPANY_TYPE)) {
+            Log.e(TAG, "onDataChange: test company comment 1 " + comment.getType());
+            RefBase.refCompany(comment.getFreelancerId())
+                    .addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            dataSnapshot.getRef().removeEventListener(this);
+                            if (dataSnapshot.exists()) {
+                                //it's Freelancer
+                                Company company = dataSnapshot.getValue(Company.class);
+                                Log.e(TAG, "onDataChange: call company ");
+                                Intent intent = new Intent(Intent.ACTION_CALL);
+                                intent.setData(Uri.parse("tel:+" + company.getCompanyPhone()));
+                                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                                    startActivity(intent);
+                                } else {
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        requestPermissions(new String[]{CALL_PHONE}, 1);
+                                    }
+                                }
+                                Log.e(TAG, "onDataChange: test company comment 2 ");
+                            }
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+//                            } else if (TextUtils.equals(comment.getType(), Constants.FREELANCER)) {
+        } else {
+            RefBase.refWorker(comment.getFreelancerId())
+                    .addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            dataSnapshot.getRef().removeEventListener(this);
+                            if (dataSnapshot.exists()) {
+                                //it's Freelancer
+                                CMWorker cmWorker = dataSnapshot.getValue(CMWorker.class);
+                                Log.e(TAG, "onDataChange: call Freelancer ");
+                                Intent intent = new Intent(Intent.ACTION_CALL);
+                                intent.setData(Uri.parse("tel:+" + cmWorker.getWorkerPhone()));
+                                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                                    startActivity(intent);
+                                } else {
+                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                        requestPermissions(new String[]{CALL_PHONE}, 1);
+                                    }
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+        }
+    }
 }

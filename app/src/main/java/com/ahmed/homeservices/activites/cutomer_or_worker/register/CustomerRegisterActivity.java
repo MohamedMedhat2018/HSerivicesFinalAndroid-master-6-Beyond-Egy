@@ -31,6 +31,7 @@ import com.ahmed.homeservices.models.User;
 import com.ahmed.homeservices.phone_utils.PhoneUtils;
 import com.ahmed.homeservices.snekers.Snekers;
 import com.ahmed.homeservices.utils.Utils;
+import com.developer.kalert.KAlertDialog;
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.model.Image;
 import com.github.rubensousa.bottomsheetbuilder.BottomSheetBuilder;
@@ -544,7 +545,21 @@ public class CustomerRegisterActivity extends AppCompatActivity implements Valid
             Utils.startWobble(getApplicationContext(), etEnterPass);
             //etEnterPass.setError(getString(R.string.enter_6_chars));
 //            showError(5, getString(R.string.enter_6_chars));
-            Snekers.getInstance().error(getString(R.string.enter_6_chars), this);
+//            Snekers.getInstance().error(getString(R.string.enter_6_chars), this);
+
+            KAlertDialog kDialog = new KAlertDialog(this, KAlertDialog.WARNING_TYPE)
+                    .setTitleText(getString(R.string.app_name_root))
+                    .setContentText(getString(R.string.enter_6_chars))
+                    .setConfirmText(getString(R.string.ok))
+                    .setConfirmClickListener(new KAlertDialog.KAlertClickListener() {
+                        @Override
+                        public void onClick(KAlertDialog kAlertDialog) {
+                            kAlertDialog.dismissWithAnimation();
+                        }
+                    });
+            kDialog.setCancelable(true);
+            kDialog.setCanceledOnTouchOutside(true);
+            kDialog.show();
             return;
         }
 

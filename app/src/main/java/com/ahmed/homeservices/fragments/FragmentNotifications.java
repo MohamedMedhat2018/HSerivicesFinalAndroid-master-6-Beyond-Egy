@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -39,6 +40,7 @@ import com.ahmed.homeservices.models.Notification;
 import com.ahmed.homeservices.models.ShadowTransformer;
 import com.ahmed.homeservices.models.User;
 import com.ahmed.homeservices.models.orders.OrderRequest;
+import com.ahmed.homeservices.utils.SwipeToDeleteCallback;
 import com.ahmed.homeservices.utils.Utils;
 import com.developer.kalert.KAlertDialog;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -73,6 +75,9 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
         SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = "FragmentNotifications";
+    @BindView(R.id.ll_fragment_my_noti_parent)
+    LinearLayout ll_fragment_my_noti_parent;
+
     @BindView(R.id.rvNotifications)
     RecyclerView rvNotifications;
     @BindView(R.id.llLogin)
@@ -101,6 +106,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
     private AlertDialog spotsDialog;
     private Intent intent;
     private String userId;
+    NotificationAdapter notificationAdapter;
 
     private void showLoadingDialog() {
 //        progressDialog = new ProgressDialog(getActivity());
@@ -280,7 +286,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
                                                 notification.setShown(isShown);
                                                 notifications.add(notification);
                                             }
-                                            setAdapter();
+                                            setAdapter(Constants.CM);
 
                                             tvNoNotifi.setVisibility(View.GONE);
                                         } else {
@@ -349,7 +355,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
 
                                                 notifications.add(notification);
                                             }
-                                            setAdapter();
+                                            setAdapter(Constants.FREELANCER);
 
 
                                             tvNoNotifi.setVisibility(View.GONE);
@@ -420,7 +426,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
 
                                                 notifications.add(notification);
                                             }
-                                            setAdapter();
+                                            setAdapter(Constants.COMPANY);
 
 
                                             tvNoNotifi.setVisibility(View.GONE);
@@ -513,7 +519,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
 
                                 notifications.add(notification);
                             }
-                            setAdapter();
+                            setAdapter(Constants.USER);
 
 
                             tvNoNotifi.setVisibility(View.GONE);
@@ -607,11 +613,112 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
 //        });
     }
 
-    private void setAdapter() {
+    private void setAdapter(String type) {
         Collections.reverse(notifications);
-        NotificationAdapter notificationAdapter =
+        notificationAdapter =
                 new NotificationAdapter(getActivity(), notifications, this::onNotificationClick);
         rvNotifications.setAdapter(notificationAdapter);
+
+        enableSwipToDeleteAndUndo(type);
+
+//        ItemTouchHelper.SimpleCallback simpleTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+//            @Override
+//            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//                Toast.makeText(getContext(), "on Move ", Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//
+//            @Override
+//            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+//                Toast.makeText(getContext(), "on Swiped ", Toast.LENGTH_SHORT).show();
+//
+//                int position = viewHolder.getAdapterPosition();
+//                notifications.remove(position);
+////                notificationAdapter.notifyDataSetChanged();
+//                notificationAdapter.notifyItemRemoved(position);
+////                notificationAdapter.notifyItemRangeChanged(position, notifications.size());
+////                notificationAdapter.notifyDataSetChanged();
+//
+//            }
+//        };
+//
+//        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleTouchCallback);
+//        itemTouchHelper.attachToRecyclerView(rvNotifications);
+    }
+
+    private void enableSwipToDeleteAndUndo(String type) {
+        SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(getContext()) {
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                final int position = viewHolder.getAdapterPosition();
+                final Notification item = notifications.get(position);
+
+                Log.e(TAG, "onSwiped:  swipe" + item.getNotificationId());
+
+                userId = Prefs.getString(Constants.FIREBASE_UID, "");
+
+                Log.e(TAG, "onSwiped:  swipe userId" + userId);
+
+
+                if (type.equals(Constants.USER)) {
+                    RefBase.notifiCustomer(userId).child(item.getNotificationId()).
+                            addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
+                                        dataSnapshot.getRef().removeEventListener(this);
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                                            dataSnapshot.getRef().removeValue();
+                                            Log.e(TAG, "onDataChange: test remove ");
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                } else if (type.equals(Constants.FREELANCER) || type.equals(Constants.COMPANY)) {
+                    RefBase.notifiFreelance(userId).child(item.getNotificationId()).
+                            addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
+                                        dataSnapshot.getRef().removeEventListener(this);
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                                            dataSnapshot.getRef().removeValue();
+                                            Log.e(TAG, "onDataChange: test remove company ");
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                }
+
+
+                notificationAdapter.removeItem(position);
+
+                //for undo
+//                Snackbar snackbar = Snackbar.make(ll_fragment_my_noti_parent, "Item was removed from the list.", Snackbar.LENGTH_LONG);
+//                snackbar.setAction("UNDO", new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                        notificationAdapter.restoreItem(item, position);
+//                        rvNotifications.scrollToPosition(position);
+//                    }
+//                });
+//                snackbar.setActionTextColor(Color.YELLOW);
+//                snackbar.show();
+            }
+        };
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeToDeleteCallback);
+        itemTouchHelper.attachToRecyclerView(rvNotifications);
     }
 
     private void login() {
@@ -655,6 +762,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
         userId = Prefs.getString(Constants.FIREBASE_UID, "");
 //        showNotificationDetails(notification);
         showMoreDetails(notification, userId);
+
     }
 
     private void showMoreDetails(Notification notification, String userId) {
@@ -1007,6 +1115,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
                                                                         Bundle bundle = new Bundle();
                                                                         intent = new Intent(getActivity(), CustomerPostDetails.class);
                                                                         bundle.putSerializable(Constants.ORDER, orderRequest);
+                                                                        bundle.putString(Constants.USER_TYPE, Constants.USER);
                                                                         intent.putExtras(bundle);
                                                                         startActivity(intent);
                                                                     }

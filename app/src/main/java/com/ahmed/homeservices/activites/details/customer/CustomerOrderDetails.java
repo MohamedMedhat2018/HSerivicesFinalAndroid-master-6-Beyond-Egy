@@ -25,6 +25,7 @@ import com.ahmed.homeservices.interfaces.OnImageClicked;
 import com.ahmed.homeservices.models.orders.OrderRequest;
 import com.ahmed.homeservices.utils.Utils;
 import com.asksira.loopingviewpager.LoopingViewPager;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -32,6 +33,7 @@ import com.rd.PageIndicatorView;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,6 +72,9 @@ public class CustomerOrderDetails extends AppCompatActivity implements Serializa
     LinearLayout ll_customer_order_rate;
     @BindView(R.id.carYourRequestWith)
     CardView carYourRequestWith;
+    @BindView(R.id.tvEditOrderToolbar3)
+    TextView cancelOrder;
+
 
     @BindView(R.id.cardNoImages)
     View cardNoImages;
@@ -100,6 +105,8 @@ public class CustomerOrderDetails extends AppCompatActivity implements Serializa
     }
 
     private void accessViews() {
+        cancelOrder.setVisibility(View.VISIBLE);
+
 
 //        Fresca.initialize(this);
 
@@ -256,6 +263,25 @@ public class CustomerOrderDetails extends AppCompatActivity implements Serializa
 
             Log.e(TAG, "accessViews: " + orderRequest.getState());
 
+            cancelOrder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.e(TAG, "cancel request ");
+
+                    Map<String, Object> mapState = new HashMap<>();
+                    mapState.put(Constants.ORDER_STATE, Constants.ORDER_STATE_CANCELLED);
+
+                    RefBase.refRequests(orderRequest.getOrderId())
+                            .updateChildren(mapState)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.e(TAG, " request cancel Successfully");
+                                    finish();
+                                }
+                            });
+                }
+            });
 
         }
     }

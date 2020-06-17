@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:layout_height="match_parent"
+    android:id="@+id/ll_fragment_my_noti_parent"
     android:orientation="vertical">
 
-<!--    <com.google.android.gms.ads.AdView android:id="@+id/adView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="false"-->
-<!--        android:layout_alignParentBottom="false"-->
-<!--        ads:adSize="BANNER"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        ads:adUnitId="@string/Ad_UNIT_ID_BANNER"-->
-<!--        />-->
+    <!--    <com.google.android.gms.ads.AdView android:id="@+id/adView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerHorizontal="false"-->
+    <!--        android:layout_alignParentBottom="false"-->
+    <!--        ads:adSize="BANNER"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        ads:adUnitId="@string/Ad_UNIT_ID_BANNER"-->
+    <!--        />-->
 
 
 <!--<RelativeLayout-->

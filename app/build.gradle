@@ -93,6 +93,7 @@ dependencies {
 
     implementation 'io.michaelrocks:libphonenumber-android:8.10.22'
 
+    //main alert Dailog
     implementation 'com.github.TutorialsAndroid:KAlertDialog:v7.0.19'
 
 

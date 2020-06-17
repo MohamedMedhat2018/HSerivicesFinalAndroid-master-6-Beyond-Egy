@@ -6,6 +6,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +43,7 @@ import com.ahmed.homeservices.adapters.view_pager.CardPagerAdapterAfterLogin;
 import com.ahmed.homeservices.constants.Constants;
 import com.ahmed.homeservices.fire_utils.RefBase;
 import com.ahmed.homeservices.interfaces.OnItemClick;
+import com.ahmed.homeservices.interfaces.OnMakeCallClick;
 import com.ahmed.homeservices.messages.MsgFrmLoginToNotification;
 import com.ahmed.homeservices.models.AdapterTabItem;
 import com.ahmed.homeservices.models.CMWorker;
@@ -82,7 +86,10 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FragmentOrderAndPosts extends Fragment implements OnItemClick, SwipeRefreshLayout.OnRefreshListener {
+import static android.Manifest.permission.CALL_PHONE;
+
+
+public class FragmentOrderAndPosts extends Fragment implements OnItemClick, SwipeRefreshLayout.OnRefreshListener, OnMakeCallClick {
 
     private static final String TAG = "FragmentOrderAndPosts";
     @BindView(R.id.tabLayout)
@@ -628,6 +635,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                 String city = freelancerLocation.getCity();
                                 String country = freelancerLocation.getCountryId();
                                 String catId = cmWorker.getWorkerCategoryid();
+                                Boolean freelancerStatusActivation = cmWorker.isWorkerStatusActivation();
                                 Log.e(TAG, "onDataChange: post " + city + "  " + country + "  " + catId);
                                 query.addValueEventListener(new ValueEventListener() {
                                     @Override
@@ -651,6 +659,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 //                                                Log.e(TAG, "onDataChange:  city" + orderRequest.getLocation().getCity() );
 //                                                Log.e(TAG, "onDataChange:  Country" + orderRequest.getLocation().getCountry() );
                                                 if (TextUtils.equals(orderRequest.getCategoryId(), (catId)) &&
+                                                        freelancerStatusActivation &&
 //                                                        TextUtils.equals(orderRequest.getLocation().getCity(), city)&&
                                                         TextUtils.equals(orderRequest.getLocation().getCountryId(),
                                                                 country)) {
@@ -722,7 +731,6 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
         refreshAdapterFreelancers(listFreeLancerPost, users);
 
         stopAllEventListeners();
-
 
         if (Prefs.contains(Constants.FIREBASE_UID)) {
             showLoadingDialog();
@@ -1787,7 +1795,6 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 //        }
     }
 
-
     //when u move from this fragment to another
     @Override
     public void onDetach() {
@@ -2487,7 +2494,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 
     private void refreshAdapterFreelancers(List<OrderRequest> list, List<User> users) {
         FreelancerPostsAdapter adapter = new FreelancerPostsAdapter(getActivity(), list,
-                users, this);
+                users, this, this);
 //        Log.e(TAG, "refreshAdapterWorker: " + list.size() + user);
         recyclerView.setAdapter(adapter);
 
@@ -2588,6 +2595,8 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 //                    Toast.makeText(getActivity(), "Post customrs", Toast.LENGTH_SHORT).show();
                 }
                 bundle.putSerializable(Constants.ORDER, orderRequest);
+                bundle.putString(Constants.USER_TYPE, Constants.USER);
+
                 //bundle.putSerializable(Constants.USER, user);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -2849,4 +2858,18 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 
     }
 
+    @Override
+    public void onCallClick(View v, int pos, String phoneNumber) {
+        Log.e(TAG, "onSuccess: please work i need to sleep 2");
+//        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",phoneNumber,null)));
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:+" + phoneNumber));
+
+        if (ContextCompat.checkSelfPermission(context, CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            startActivity(intent);
+        } else {
+            requestPermissions(new String[]{CALL_PHONE}, 1);
+        }
+
+    }
 }

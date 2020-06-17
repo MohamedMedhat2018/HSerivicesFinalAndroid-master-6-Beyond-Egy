@@ -4,8 +4,8 @@
     android:id="@+id/cv_customer_order"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="0dp"
     android:layout_margin="5dp"
+    android:layout_marginBottom="0dp"
     android:layoutDirection="ltr"
     app:cardCornerRadius="10dp">
 
@@ -30,21 +30,21 @@
             android:orientation="horizontal">
 
 
-<!--            <com.github.abdularis.civ.CircleImageView-->
-<!--                android:id="@+id/iv_customer_img_post"-->
-<!--                android:layout_width="60dp"-->
-<!--                android:layout_height="60dp"-->
-<!--                android:scaleType="fitCenter"-->
-<!--                app:civ_border_width="2dp"-->
-<!--                app:civ_border_color="@color/Orange"-->
-<!--                android:src="@mipmap/account" />-->
+            <!--            <com.github.abdularis.civ.CircleImageView-->
+            <!--                android:id="@+id/iv_customer_img_post"-->
+            <!--                android:layout_width="60dp"-->
+            <!--                android:layout_height="60dp"-->
+            <!--                android:scaleType="fitCenter"-->
+            <!--                app:civ_border_width="2dp"-->
+            <!--                app:civ_border_color="@color/Orange"-->
+            <!--                android:src="@mipmap/account" />-->
 
 
             <com.github.siyamed.shapeimageview.CircularImageView
-                            android:id="@+id/iv_customer_img_post"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:scaleType="fitCenter"
+                android:id="@+id/iv_customer_img_post"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
                 android:src="@mipmap/account"
                 app:siBorderColor="@color/Orange"
                 app:siBorderWidth="1dp"
@@ -65,8 +65,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:ellipsize="marquee"
-                    android:textDirection="ltr"
-                    android:text="Mohamed Ali" />
+                    android:text="Mohamed Ali"
+                    android:textDirection="ltr" />
 
 
                 <LinearLayout
@@ -81,8 +81,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="marquee"
-                        android:textDirection="ltr"
-                        android:text="Giza" />
+                        android:text="Giza"
+                        android:textDirection="ltr" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -95,14 +95,33 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="marquee"
-                        android:textDirection="ltr"
-                        android:text="Egypt" />
+                        android:text="Egypt"
+                        android:textDirection="ltr" />
 
                 </LinearLayout>
 
 
-
             </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_call_freelancer_or_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/tv_call_freelancer_or_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:autoLink="phone"
+                    android:background="@drawable/button_background1"
+                    android:gravity="center"
+                    android:text="Call"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
 
 
         </LinearLayout>

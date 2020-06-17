@@ -36,7 +36,9 @@ import com.ahmed.homeservices.adapters.rv.comments.CommentFreelancerAdapter;
 import com.ahmed.homeservices.adapters.view_pager.DemoInfiniteAdapter;
 import com.ahmed.homeservices.constants.Constants;
 import com.ahmed.homeservices.fire_utils.RefBase;
+import com.ahmed.homeservices.models.CMWorker;
 import com.ahmed.homeservices.models.Comment;
+import com.ahmed.homeservices.models.Company;
 import com.ahmed.homeservices.models.ConnectionFree;
 import com.ahmed.homeservices.models.Rate;
 import com.ahmed.homeservices.models.User;
@@ -150,6 +152,8 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
         setContentView(R.layout.activity_freelancer_post_details);
         ButterKnife.bind(this);
         accessToolbar();
+//        checkActivation();
+        Log.e(TAG, "onCreate: Activation");
 //        toolbar.setNavigationOnClickListener(view -> {
 //            //finish();
 //            onBackPressed();
@@ -158,6 +162,7 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
 
 //        getPassedData();
     }
+
 
 //    @Override
 //    protected void onNewIntent(Intent intent) {
@@ -178,6 +183,7 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
     private void accessToolbar() {
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(view -> {
+
 //            finish();
 //            Prefs.edit().putString(Constants.CLEAR, "").apply();
 //            Prefs.edit().putString(Constants.CLEAR, "").apply();
@@ -359,9 +365,12 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
         switch (orderRequest.getState()) {
             case Constants.POST:
                 tvNoCommentsYet.setVisibility(View.VISIBLE);
-                llAddComment.setVisibility(View.VISIBLE);
+//                llAddComment.setVisibility(View.VISIBLE);
+                Log.e(TAG, "withoutNotification: post1 ");
+//                checkActivation();
                 loadPreviousCommentsIntoRecyclerView();
                 checkIfIamSentOfferAlreadyToThisRequest();
+                Log.e(TAG, "withoutNotification: post2 ");
                 break;
             case Constants.FREELANCE_WORKING:
                 llAddComment.setVisibility(View.GONE);
@@ -407,6 +416,80 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
                 });
     }
 
+    private Boolean checkActivation() {
+//        RefBase.refWorker()
+        String id = Prefs.getString(Constants.FIREBASE_UID, "");
+
+        Log.e(TAG, "checkActivation: company " + id);
+
+        RefBase.refCompany(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().removeEventListener(this);
+                if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
+                    Company company = dataSnapshot.getValue(Company.class);
+                    Log.e(TAG, "checkActivation: state " + company.getCompanyStatusActivation());
+                    if (!company.getCompanyStatusActivation()) {
+
+                        llAddComment.setVisibility(View.GONE);
+//                        tvNoCommentsYet.setVisibility(View.GONE);
+                    } else {
+                        if (orderRequest.getState().equals(Constants.ORDER_STATE_CANCELLED)) {
+                            Log.e(TAG, "checkActivation: company request cancel " + orderRequest.getState());
+                            llAddComment.setVisibility(View.GONE);
+                        } else if (orderRequest.getState().equals(Constants.POST)) {
+                            Log.e(TAG, "checkActivation: company request Not cancel:  " + orderRequest.getState());
+                            llAddComment.setVisibility(View.VISIBLE);
+                        } else {
+                            llAddComment.setVisibility(View.GONE);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        RefBase.refWorker(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dataSnapshot.getRef().removeEventListener(this);
+                if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
+                    CMWorker cmWorker = dataSnapshot.getValue(CMWorker.class);
+                    Log.e(TAG, "checkActivation: state " + cmWorker.isWorkerStatusActivation());
+                    if (!cmWorker.isWorkerStatusActivation()) {
+                        llAddComment.setVisibility(View.GONE);
+                        tvNoCommentsYet.setVisibility(View.GONE);
+                    } else {
+//                        tvNoCommentsYet.setVisibility(View.VISIBLE);
+//                        llAddComment.setVisibility(View.VISIBLE);
+
+                        if (orderRequest.getState().equals(Constants.ORDER_STATE_CANCELLED)) {
+                            Log.e(TAG, "checkActivation: Freelancer request cancel " + orderRequest.getState());
+                            llAddComment.setVisibility(View.GONE);
+                        } else if (orderRequest.getState().equals(Constants.POST)) {
+                            Log.e(TAG, "checkActivation: Freelancer request Not cancel:  " + orderRequest.getState());
+                            llAddComment.setVisibility(View.VISIBLE);
+                        } else {
+                            llAddComment.setVisibility(View.GONE);
+                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        return true;
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -414,7 +497,9 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
     }
 
     private void onNotificationClicked() {
-        if (getIntent() != null) {
+        Log.e(TAG, "onNotificationClicked test");
+        //check if freelancer or company Active or not
+        if (getIntent() != null && checkActivation()) {
             if (getIntent().hasExtra(Constants.TYPE)) {
                 String passedOrderId = getIntent().getStringExtra(Constants.TYPE);
                 if (passedOrderId != null) {
@@ -561,7 +646,6 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
 
     private void accessFields() {
 
-
         if (orderRequest.getOrderPhotos().isEmpty()) {
             Log.e(TAG, "accessViews: default img  ");
             cardNoImages.setVisibility(View.VISIBLE);
@@ -571,6 +655,12 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
             looping_view_pager_post.setAdapter(demoInfiniteAdapter);
             Utils.attachIndicatiorToViewPager(looping_view_pager_post, indicatorView);
         }
+//        checkActivation();
+
+        if (orderRequest.getState().equals(Constants.ORDER_STATE_CANCELLED)) {
+            llAddComment.setVisibility(View.GONE);
+        }
+
 
         if (user != null) {
             Picasso.get().load(user.getUserPhoto()).into(iv_customer_post_img, new Callback() {
@@ -715,10 +805,13 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
 //                                                                       rv_comments.setVisibility(View.GONE);
                                                        llComments.setVisibility(View.GONE);
                                                        tvNoCommentsYet.setVisibility(View.VISIBLE);
+                                                       Log.e(TAG, "onDataChange: Empty list");
                                                    } else {
 //                                                                       rv_comments.setVisibility(View.VISIBLE);
                                                        llComments.setVisibility(View.VISIBLE);
                                                        tvNoCommentsYet.setVisibility(View.GONE);
+                                                       Log.e(TAG, "onDataChange: NOT Empty list");
+
                                                    }
                                                }
                                            }
@@ -765,9 +858,9 @@ public class FreelancerPostDetails extends AppCompatActivity implements CommentA
                                 Comment comment = new Comment();
                                 if (etWriteComment.getText().toString().trim().length() != 0) {
                                     comment.setComment(etWriteComment.getText().toString());
-                                    if (Utils.companyOrNot()){
+                                    if (Utils.companyOrNot()) {
                                         comment.setType(Constants.COMPANY_TYPE);
-                                    }else {
+                                    } else {
                                         comment.setType(Constants.FREELANCER);
                                     }
                                     comment.setFreelancerId(Prefs.getString(Constants.FIREBASE_UID, ""));

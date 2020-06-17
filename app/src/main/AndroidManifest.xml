@@ -67,6 +67,7 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.cutomer_or_worker.register.CompanyRegisterActivity"
             android:theme="@style/Theme.Transparent"
+            android:screenOrientation="portrait"
 
             />
         <!-- <activity android:name=".activites.edit_request.EditOrderActivity"> -->
@@ -145,16 +146,16 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         </activity>
         <activity
             android:name=".activites.details.freelancer.FreelancerPostDetails"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activites.details.cm_worker.CmOrderDetails"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name=".activites.details.customer.CustomerOrderDetails"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent">
 
             <!-- <intent-filter> -->
@@ -166,7 +167,7 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.details.customer.CustomerPostDetails"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent">
 
             <!-- <intent-filter> -->
@@ -180,24 +181,24 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.cutomer_or_worker.register.WorkerRegisterActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
             android:name=".activites.cutomer_or_worker.login.CustomerWorkerLoginActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
             android:name=".activites.cutomer_or_worker.register.CustomerRegisterActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
             android:name=".activites.cutomer_or_worker.CustomerOrWorkerActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"> <!-- <intent-filter> -->
+            android:screenOrientation="portrait"> <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 
 
@@ -221,7 +222,7 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.profile.EditActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent"
 
             >
@@ -237,7 +238,7 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.sms.EnterSmsCodeActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -248,7 +249,7 @@ Android permissions required for using this provider are only ACCESS_FINE_LOCATI
         <activity
             android:name=".activites.meowbottomnavigaion.MainActivity"
             android:configChanges="layoutDirection|locale"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->

@@ -7,13 +7,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ahmed.homeservices.R;
+import com.ahmed.homeservices.constants.Constants;
 import com.ahmed.homeservices.interfaces.OnItemClick;
+import com.ahmed.homeservices.interfaces.OnMakeCallClick;
 import com.ahmed.homeservices.models.User;
 import com.ahmed.homeservices.models.orders.OrderRequest;
 import com.daimajia.androidanimations.library.Techniques;
@@ -30,15 +34,17 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
 
     private static final String TAG = "MyOrderCmWorkingAdapter";
     private OnItemClick onItemClick;
+    private OnMakeCallClick onMakeCallClick;
     private Context context;
     private List<OrderRequest> listOfCmOrder = new ArrayList<>();
     private List<User> users = null;
 
-    public FreelancerPostsAdapter(Context context, List<OrderRequest> listofFreelancerOrder, List<User> users, OnItemClick onItemClick) {
+    public FreelancerPostsAdapter(Context context, List<OrderRequest> listofFreelancerOrder, List<User> users, OnItemClick onItemClick, OnMakeCallClick onMakeCallClick) {
         this.context = context;
         this.listOfCmOrder = listofFreelancerOrder;
         this.users = users;
         this.onItemClick = onItemClick;
+        this.onMakeCallClick = onMakeCallClick;
     }
 
     @NonNull
@@ -68,6 +74,23 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
 //        }
 
 //        Log.e(TAG, "onBindViewHolder:13 ");
+
+        if (orderRequest.getState().equals(Constants.FREELANCE_WORKING)) {
+
+//            holder.tv_call_freelancer_or_company.setText(users.get(position).getUserPhoneNumber());
+            holder.rr_call_freelancer_or_company.setVisibility(View.VISIBLE);
+
+            holder.tv_call_freelancer_or_company.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onMakeCallClick.onCallClick(view, position, users.get(position).getUserPhoneNumber());
+                    Log.e(TAG, "onSuccess: please work i need to sleep ");
+
+                }
+            });
+        } else {
+            holder.rr_call_freelancer_or_company.setVisibility(View.GONE);
+        }
 
 
 //
@@ -132,6 +155,9 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
         TextView tv_customer_city_post;
         TextView tv_customer_country_post;
         TextView tv_post_description;
+        RelativeLayout rr_call_freelancer_or_company;
+        Button tv_call_freelancer_or_company;
+
 
         ViewHolder(@NonNull View itemView) {
 
@@ -142,6 +168,10 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
             tv_customer_city_post = itemView.findViewById(R.id.tv_customer_city_post);
             tv_customer_country_post = itemView.findViewById(R.id.tv_customer_country_post);
             tv_post_description = itemView.findViewById(R.id.tv_post_description);
+            rr_call_freelancer_or_company = itemView.findViewById(R.id.rr_call_freelancer_or_company);
+            tv_call_freelancer_or_company = itemView.findViewById(R.id.tv_call_freelancer_or_company);
+
+
         }
     }
 }

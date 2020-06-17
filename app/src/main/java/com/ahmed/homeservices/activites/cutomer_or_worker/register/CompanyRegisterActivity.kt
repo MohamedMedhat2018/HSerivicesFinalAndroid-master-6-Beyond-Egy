@@ -29,6 +29,7 @@ import com.ahmed.homeservices.snekers.Snekers
 import com.ahmed.homeservices.utils.FileUtils
 import com.ahmed.homeservices.utils.PhoneUtils.checkIfPhoneExistInSpecificRef
 import com.ahmed.homeservices.utils.Utils.*
+import com.developer.kalert.KAlertDialog
 import com.esafirm.imagepicker.features.ImagePicker
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener
@@ -1114,7 +1115,20 @@ class CompanyRegisterActivity : AppCompatActivity(), EasyPermissions.PermissionC
 
         if (!isValidPassword(etCompanyPass.text.toString().trim())) {
             startWobble(applicationContext, etCompanyPass)
-            Snekers.getInstance().error(getString(R.string.enter_6_chars), this)
+//            Snekers.getInstance().error(getString(R.string.enter_6_chars), this)
+            var kDialog: KAlertDialog = KAlertDialog(this, KAlertDialog.WARNING_TYPE)
+                    .setTitleText(getString(R.string.app_name_root))
+                    .setContentText(getString(R.string.enter_6_chars))
+                    .setConfirmText(getString(R.string.ok))
+                    .setConfirmClickListener(KAlertDialog.KAlertClickListener {
+                        it.dismissWithAnimation()
+                    })
+            kDialog.setCancelable(true)
+            kDialog.setCanceledOnTouchOutside(true)
+            kDialog.show()
+
+
+
             scrollToView(scrollView, etCompanyPass)
             return false
         }

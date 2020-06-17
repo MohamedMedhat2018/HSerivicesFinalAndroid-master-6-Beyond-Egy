@@ -192,7 +192,7 @@
     <string name="previewcomment">Preview</string>
     <string name="_9_ebn_hany_el_andalosy_nasr_city_cairo_egypt">9 Ebn Hany El Andalosy Nasr City, Cairo-Egypt</string>
     <string name="you_are_already_submit_an_offer">You have submitted offer</string>
-    <string name="enter_6_chars">Password should contain at least 6 characters with one upper and lower character</string>
+    <string name="enter_6_chars">Password is weak, please try another one. \n The password must be more than 6 characters, contains numbers, lowe-case letters, upper-case letters , for example Ahmed@2020</string>
     <string-array name="cate_list">
         <item>cate 1</item>
         <item>cate 2</item>
