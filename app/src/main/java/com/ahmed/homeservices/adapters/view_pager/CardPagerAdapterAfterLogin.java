@@ -126,6 +126,7 @@ public class CardPagerAdapterAfterLogin extends PagerAdapter implements CardAdap
                 view.findViewById(R.id.login_worker_btn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Log.e(TAG, "onClick: test 1.2");
                         Intent intent = new Intent(context, CustomerWorkerLoginActivity.class);
                         context.startActivity(intent);
                         Prefs.edit().putString(Constants.WORKER_OR_CUSTOMER, Constants.WORKERS).apply();

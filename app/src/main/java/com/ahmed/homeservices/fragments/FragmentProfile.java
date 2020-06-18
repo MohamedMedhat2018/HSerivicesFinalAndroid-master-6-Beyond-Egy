@@ -308,6 +308,7 @@ public class FragmentProfile extends Fragment implements
             includeLoginWorker.findViewById(R.id.login_worker_btn).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Log.e(TAG, "onClick: test 1.5");
                     Intent intent = new Intent(getActivity(), CustomerWorkerLoginActivity.class);
                     getActivity().startActivity(intent);
                     Prefs.edit().putString(Constants.WORKER_OR_CUSTOMER, Constants.WORKERS).apply();

@@ -90,11 +90,13 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
                 view = LayoutInflater.from(container.getContext())
                         .inflate(R.layout.layout_customers, container, false);
                 break;
-            case 1:
-                view = LayoutInflater.from(container.getContext())
+
+            //freelancer
+            /*          case 1:*/
+              /*  view = LayoutInflater.from(container.getContext())
                         .inflate(R.layout.layout_worker, container, false);
-                break;
-            case 2:
+                break;*/
+            case 1:
                 view = LayoutInflater.from(container.getContext())
                         .inflate(R.layout.layout_company, container, false);
                 break;
@@ -220,7 +222,12 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
 //                handler.postDelayed(r, 200);
 
                 break;
+
+            //freelancer
+/*
             case 1:
+*/
+
 //                if (Prefs.getPreferences().contains(Constants.HINT_WORKER)) {
 //                    view.findViewById(R.id.login_as_worker_hint).setVisibility(View.GONE);
 //                } else {
@@ -241,9 +248,14 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
 //                        }
 //                    });
 //                }
+
+
+            //freelancer
+/*
                 view.findViewById(R.id.login_worker_btn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        Log.e(TAG, "onClick: test 1.1");
                         ((Activity) context).finish();
                         Intent intent = new Intent(context, CustomerWorkerLoginActivity.class);
                         context.startActivity(intent);
@@ -252,6 +264,8 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
 
                     }
                 });
+*/
+
 
 //                shimmerLayout = view.findViewById(R.id.shimmerLayout);
 //                shimmerLayout.startShimmerAnimation();
@@ -279,9 +293,14 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
 //                    }
 //                };
 //                handler.postDelayed(r, 200);
-                break;
 
-            case 2:
+
+            //freelancer
+/*
+                break;
+*/
+
+            case 1:
 //                if (Prefs.getPreferences().contains(Constants.HINT_COMPANY)) {
 //                    view.findViewById(R.id.login_as_company_hint).setVisibility(View.GONE);
 //                } else {
@@ -382,6 +401,5 @@ public class CardPagerAdapter extends PagerAdapter implements CardAdapter {
 //            }
 //        }
 //    }
-
 
 }

@@ -128,7 +128,10 @@ public class CustomerOrWorkerActivity extends AppCompatActivity implements Seria
     private void setCardPagerAdapter() {
         mCardAdapter = new CardPagerAdapter(CustomerOrWorkerActivity.this);
         mCardAdapter.addCardItem(new CardItem(R.string.title_1, R.string.text_1));
+        //freelancer
+/*
         mCardAdapter.addCardItem(new CardItem(R.string.title_2, R.string.title_2));
+*/
         mCardAdapter.addCardItem(new CardItem(R.string.title_3, R.string.title_3));
 
         mFragmentCardAdapter = new CardFragmentPagerAdapter(getSupportFragmentManager(),
@@ -139,7 +142,12 @@ public class CustomerOrWorkerActivity extends AppCompatActivity implements Seria
 
         mViewPager.setAdapter(mCardAdapter);
         mViewPager.setPageTransformer(false, mCardShadowTransformer);
+
+        mViewPager.setOffscreenPageLimit(2);
+        //freelancer
+/*
         mViewPager.setOffscreenPageLimit(3);
+*/
         mViewPager.setPageMargin(1);
 
         mCardShadowTransformer.enableScaling(true);

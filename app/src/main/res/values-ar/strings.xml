@@ -50,9 +50,9 @@
     <string name="login">تسجيل الدخول</string>
     <!--    <string name="worker">صاحب عمل</string>-->
     <string name="worker">دخول كصنايعي</string>
-    <string name="company">دخول كشركه</string>
+    <string name="company">دخول الشركات</string>
     <string name="skip">تخطي</string>
-    <string name="customer">دخول كعميل</string>
+    <string name="customer">دخول العميل</string>
     <string name="send_request">إرسال الطلب</string>
     <string name="preview">عرض الطلب قبل الارسال</string>
     <string name="conf_requ_order">تأكيد الطلب</string>
