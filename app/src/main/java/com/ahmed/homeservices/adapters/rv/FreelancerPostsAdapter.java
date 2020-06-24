@@ -59,6 +59,7 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         OrderRequest orderRequest = listOfCmOrder.get(position);
 
+        Log.e(TAG, "onBindViewHolder: reverse " + orderRequest.getOrderDescription());
 
 //        Log.e(TAG, "onBindViewHolder: " + orderRequest.getFrom());
 //        Log.e(TAG, "onBindViewHolder: " + orderRequest.getTo());
@@ -133,7 +134,6 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
             }
         });
 
-
         YoYo.with(Techniques.FadeIn)
                 .duration(600)
                 .playOn(holder.itemView);
@@ -170,7 +170,6 @@ public class FreelancerPostsAdapter extends RecyclerView.Adapter<FreelancerPosts
             tv_post_description = itemView.findViewById(R.id.tv_post_description);
             rr_call_freelancer_or_company = itemView.findViewById(R.id.rr_call_freelancer_or_company);
             tv_call_freelancer_or_company = itemView.findViewById(R.id.tv_call_freelancer_or_company);
-
 
         }
     }

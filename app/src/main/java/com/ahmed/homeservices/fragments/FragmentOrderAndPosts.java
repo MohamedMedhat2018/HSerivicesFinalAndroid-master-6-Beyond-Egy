@@ -78,6 +78,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -183,6 +184,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
     private List<CmTask> listCmFinishedType = new ArrayList<>();
     //
     private List<OrderRequest> listFreeLancerPost = new ArrayList<>();
+    Boolean dataLoaded = false;
     private List<OrderRequest> listFreeLancerCompanyWorking = new ArrayList<>();
     private List<OrderRequest> listFreeLancerFinishing = new ArrayList<>();
     //    private List<CMWorker> listFreeLancerWorkers = new ArrayList<>();
@@ -200,6 +202,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
     private int posSelectedOrder;
     private String countryIdForCompanyFilter = null;
     private boolean countryActiveOrNot = false;
+    private List<OrderRequest> listFreeLancerPostTest = new ArrayList<>();
 
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -655,7 +658,6 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                 OrderRequest orderRequest = dataSnapshot1.getValue(OrderRequest.class);
                                                 Log.e(TAG, "onDataChange:1.1.1 " + orderRequest.getCategoryId());
                                                 Log.e(TAG, "onDataChange:1.1.1 " + catId);
-                                                //                                                Log.e(TAG, "onDataChange:1.2 " + freelancerLocation.getCity());
 //                                                Log.e(TAG, "onDataChange:1.2 " + orderRequest.getLocation().getCity());
 //                                                Log.e(TAG, "onDataChange:  city" + orderRequest.getLocation().getCity() );
 //                                                Log.e(TAG, "onDataChange:  Country" + orderRequest.getLocation().getCountry() );
@@ -676,11 +678,11 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                                     dataSnapshot.getRef().removeEventListener(this);
                                                                     if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
-                                                                        listFreeLancerPost.add(orderRequest);
+                                                                        listFreeLancerPost.add(0, orderRequest);
                                                                         User user = dataSnapshot.getValue(User.class);
                                                                         users.add(user);
-                                                                        Log.e(TAG, "onDataChange: 200 " + user.getUserName());
-                                                                        Log.e(TAG, "onDataChange: 200 " + user.getUserPhoto());
+                                                                        Log.e(TAG, "onDataChange: 210 " + user.getUserName());
+                                                                        Log.e(TAG, "onDataChange: 211 " + user.getUserPhoto());
                                                                         refreshAdapterFreelancers(listFreeLancerPost, users);
                                                                     }
                                                                 }
@@ -729,6 +731,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
         listFreeLancerPost.clear();
         users.clear();
 //        refreshAdapterFreelancers(new ArrayList<OrderRequest>(), null);
+        //2
         refreshAdapterFreelancers(listFreeLancerPost, users);
 
         stopAllEventListeners();
@@ -805,7 +808,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                                             dataSnapshot.getChildren()) {
                                                                         Log.e(TAG, "onDataChange: " + dataSnapshot1.toString());
                                                                         OrderRequest orderRequest = dataSnapshot1.getValue(OrderRequest.class);
-                                                                        Log.e(TAG, "onDataChange:1.1 " + orderRequest.getCategoryId());
+                                                                        Log.e(TAG, "onDataChange:1.11 " + orderRequest.getOrderDescription());
                                                                         Log.e(TAG, "onDataChange:1.1 " + catIds);
                                                                         //                                                Log.e(TAG, "onDataChange:1.2 " + freelancerLocation.getCity());
                                                                         Log.e(TAG, "onDataChange:1.22 " + orderRequest.getCategoryId() + " and " + orderRequest.getLocation().getCountryId() + " and " + countryId + " and " + countryActiveOrNot2);
@@ -818,9 +821,13 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 //                                                        TextUtils.equals(orderRequest.getLocation().getCity(), city)&&
                                                                                     TextUtils.equals(orderRequest.getLocation().getCountryId(),
                                                                                             countryId) && countryActiveOrNot2) {
+                                                                                dataLoaded = false;
+
 //                                                    && orderRequest.getLocation() == freelancerLocation
+                                                                                Log.e(TAG, "onDataChange: orderRequest 1000 " + listFreeLancerPost.size());
+
                                                                                 Log.e(TAG, "onDataChange: Done El7 ");
-                                                                                Log.e(TAG, "onDataChange:1023 " + orderRequest.getCustomerId());
+                                                                                Log.e(TAG, "onDataChange:1023 " + orderRequest.getOrderDescription());
 //                                                    refreshAdapterFreelancers(listFreeLancerPost, user);
 
                                                                                 RefBase.refUser(orderRequest.getCustomerId())
@@ -829,11 +836,29 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                                                                 dataSnapshot.getRef().removeEventListener(this);
                                                                                                 if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
-                                                                                                    listFreeLancerPost.add(orderRequest);
+                                                                                                    Log.e(TAG, "onDataChange: orderRequest 1 " + orderRequest.getOrderDescription());
+                                                                                                    Log.e(TAG, "onDataChange: orderRequest 1 " + listFreeLancerPost.size());
+//                                                                                                    Collections.reverse(listFreeLancerPost);
+                                                                                                    listFreeLancerPost.add(0, orderRequest);
+                                                                                                    Log.e(TAG, "onDataChange: orderRequest 2.1 " + listFreeLancerPost.size());
+//                                                                                                    Collections.reverse(listFreeLancerPost);
+
+                                                                                                    listFreeLancerPostTest.add(orderRequest);
+                                                                                                    if (listFreeLancerPost.size() > 1) {
+                                                                                                        Log.e(TAG, "onDataChange: orderRequest 1.1.1 " + listFreeLancerPost.get(listFreeLancerPost.size() - 1).getOrderDescription());
+                                                                                                        Log.e(TAG, "onDataChange: orderRequest 1.1.2 " + listFreeLancerPost.get(listFreeLancerPost.size() - 2).getOrderDescription());
+                                                                                                    }
+                                                                                                    Log.e(TAG, "onDataChange: orderRequest 1.1 " + listFreeLancerPost.size());
+                                                                                                    if (listFreeLancerPost.size() > 7) {
+                                                                                                        for (int x = 0; x < listFreeLancerPost.size(); x++) {
+                                                                                                            Log.e(TAG, "onDataChange: list items of " + x + " is " + listFreeLancerPost.get(x).getOrderDescription());
+                                                                                                        }
+                                                                                                    }
                                                                                                     User user = dataSnapshot.getValue(User.class);
                                                                                                     users.add(user);
                                                                                                     Log.e(TAG, "onDataChange: 200 " + user.getUserName());
                                                                                                     Log.e(TAG, "onDataChange: 200 " + user.getUserPhoto());
+                                                                                                    Log.e(TAG, "onDataChange: 2001 " + orderRequest.getOrderDescription());
                                                                                                     refreshAdapterFreelancers(listFreeLancerPost, users);
                                                                                                 }
                                                                                             }
@@ -845,9 +870,18 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                                                         });
 //                                                                                          listFreeLancerWorkers.add(cmWorker);
                                                                             }
+
                                                                         }
+                                                                        Log.e(TAG, "onDataChange: 1 company ");
+//                                                                        Collections.reverse(listFreeLancerPost);
+//                                                                        refreshAdapterFreelancers(listFreeLancerPost, users);
+//                                                                        Log.e(TAG, "onDataChange: 2 company ");
 
                                                                     }
+//                                                                    refreshAdapterFreelancers(listFreeLancerPost, users);
+//                                                                    Log.e(TAG, "onDataChange: 2 company ");
+//                                                                    dataLoaded = true;
+
                                                                 }
                                                                 progress.setVisibility(View.GONE);
                                                             }
@@ -857,7 +891,6 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
                                                                 progress.setVisibility(View.GONE);
                                                             }
                                                         });
-
 //                                                        }
                                                     }
                                                 }
@@ -881,6 +914,8 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 
                         }
                     });
+
+            //ttttttttt
 
 
         }
@@ -2456,9 +2491,10 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
 
     private void refreshAdapter(List<OrderRequest> list, String orderOrPost) {
         this.listCustomerBusiness = list;
+        Collections.reverse(list);
+        Log.e(TAG, "refreshAdapter: test sort " + list.size());
         MyOrderCustomerAdapter adapter = new MyOrderCustomerAdapter(getActivity(), list, orderOrPost, this);
         recyclerView.setAdapter(adapter);
-
 
         if (list.isEmpty()) {
             noOrdersOrPostsYet.setVisibility(View.VISIBLE);
@@ -2483,6 +2519,7 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
     }
 
     private void refreshAdapterWorker(List<CmTask> list) {
+        Collections.reverse(list);
         MyOrderCmWorkingAdapter adapter = new MyOrderCmWorkingAdapter(getActivity(), list, this);
         Log.e(TAG, "refreshAdapterWorker: " + list.size());
         recyclerView.setAdapter(adapter);
@@ -2494,10 +2531,28 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
     }
 
     private void refreshAdapterFreelancers(List<OrderRequest> list, List<User> users) {
+//        Log.e(TAG, "refreshAdapterFreelancers: get data after sort " + list.get(0).getOrderDescription());
+//        if (list.size() > 1) {
+
+        for (int x = 0; x < list.size(); x++) {
+            Log.e(TAG, "onDataChange: 1 list items of " + x + " is " + list.get(x).getOrderDescription());
+        }
+
+
+//        Log.e(TAG, "refreshAdapterFreelancers: get data after sort " + list.get(0).getOrderDescription());
+//        Log.e(TAG, "refreshAdapterFreelancers: get data after sort " + list.get(1).getOrderDescription());
+
+//        if (dataLoaded)
+//            Collections.reverse(list);
         FreelancerPostsAdapter adapter = new FreelancerPostsAdapter(getActivity(), list,
                 users, this, this);
 //        Log.e(TAG, "refreshAdapterWorker: " + list.size() + user);
         recyclerView.setAdapter(adapter);
+//        }
+//        FreelancerPostsAdapter adapter = new FreelancerPostsAdapter(getActivity(), list,
+//                users, this, this);
+////        Log.e(TAG, "refreshAdapterWorker: " + list.size() + user);
+//        recyclerView.setAdapter(adapter);
 
 
         if (list.isEmpty()) {
@@ -2835,6 +2890,8 @@ public class FragmentOrderAndPosts extends Fragment implements OnItemClick, Swip
             users.clear();
 //        refreshAdapterFreelancers(new ArrayList<OrderRequest>(), null);
             refreshAdapterFreelancers(listFreeLancerPost, users);
+            //1
+            Log.e(TAG, "onRefresh: list to adapter 1 " + listFreeLancerPost.size());
             if (getArguments() != null) {
                 toggleBetweenLoginAndPreview(1);
                 Log.e(TAG, "onTabSelected: fuuuu5 ");

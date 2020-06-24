@@ -78,7 +78,7 @@
     <string name="enter_time">Enter Time</string>
     <string name="login">Sign in</string>
     <string name="worker">Login as Worker</string>
-    <string name="company">Login as company</string>
+    <string name="company">Login as Company</string>
     <string name="skip">Skip</string>
     <string name="customer">Login as Customer</string>
     <string name="default_customer_name">Customer</string>
@@ -108,7 +108,7 @@
     <string name="enter_email">Enter email</string>
     <string name="enter_valid_email">Enter valid email</string>
     <string name="select_country">Select country</string>
-    <string name="select_country2" >Select country</string>
+    <string name="select_country2">Select country</string>
     <string name="select_country2_arb">أختر دوله</string>
 
     <string name="select_city">Select city</string>

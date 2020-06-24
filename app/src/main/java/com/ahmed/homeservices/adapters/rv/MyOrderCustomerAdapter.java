@@ -100,7 +100,7 @@ public class MyOrderCustomerAdapter extends RecyclerView.Adapter<MyOrderCustomer
 //                break;
 //            case Constants.ORDER:
         if (!order.getOrderPhotos().isEmpty()) {
-            Log.e(TAG, "koooo  ");
+            Log.e(TAG, "koooo  " + order.getOrderDescription());
             //https://firebasestorage.googleapis.com/v0/b/servizi-528e9.appspot.com/o/images%2F50f5774f-3646-419e-a98a-0172526fdd2f?alt=media&token=15f8391a-8221-4141-bfa9-c27b2df246d9
 //            Glide.with(context).load(Uri.parse(order.getOrderPhotos().get(0))).into(holder.customer_order_img);
             //Log.e(TAG, "onBindViewHolder: " + order.getOrderPhotos().get(0));

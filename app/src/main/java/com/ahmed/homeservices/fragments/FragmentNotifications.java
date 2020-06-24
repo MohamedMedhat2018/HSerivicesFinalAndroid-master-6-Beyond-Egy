@@ -274,7 +274,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
 //                                String isShown = hashMap.get("shown").toString();
                                                 boolean isShown = (boolean) hashMap.get("shown");
 //                                String orderId = hashMap.get("orderId").toString();
-                                                Log.e(TAG, "onDataChange:1.1 " + title + " " + message);
+                                                Log.e(TAG, "onDataChange:1.2 " + title + " " + message);
                                                 Notification notification = new Notification();
                                                 notification.setBody(message);
                                                 notification.setNotificationId(snap.getKey());
@@ -331,7 +331,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
                                                     dataSnapshot.getChildren()) {
                                                 HashMap<String, Object> hashMap =
                                                         (HashMap<String, Object>) snap.getValue();
-                                                Log.e(TAG, "onDataChange:1.1 " + hashMap.toString());
+                                                Log.e(TAG, "onDataChange:1.3 " + hashMap.toString());
 
                                                 if (hashMap.get("message") != null) {
                                                     message = hashMap.get("message").toString();
@@ -392,17 +392,15 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
                                             notifications.clear();
                                             progress.setVisibility(View.GONE);
 
-
                                             String message = null, title = null;
                                             boolean isShown = false;
                                             Notification notification;
-
 
                                             for (DataSnapshot snap :
                                                     dataSnapshot.getChildren()) {
                                                 HashMap<String, Object> hashMap =
                                                         (HashMap<String, Object>) snap.getValue();
-                                                Log.e(TAG, "onDataChange:1.1 " + hashMap.toString());
+                                                Log.e(TAG, "onDataChange:1.4 " + hashMap.toString());
 
                                                 if (hashMap.get("message") != null) {
                                                     message = hashMap.get("message").toString();
@@ -495,7 +493,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
                                     dataSnapshot.getChildren()) {
                                 HashMap<String, Object> hashMap =
                                         (HashMap<String, Object>) snap.getValue();
-                                Log.e(TAG, "onDataChange:1.1 " + hashMap.toString());
+                                Log.e(TAG, "onDataChange:1.5 " + hashMap.toString());
 
                                 if (hashMap.get("message") != null) {
                                     message = hashMap.get("message").toString();
@@ -763,6 +761,7 @@ public class FragmentNotifications extends Fragment implements OnNotificationCli
         userId = Prefs.getString(Constants.FIREBASE_UID, "");
 //        showNotificationDetails(notification);
         showMoreDetails(notification, userId);
+        Log.e(TAG, "onNotificationClick: position 1.1 " + pos);
 
     }
 
